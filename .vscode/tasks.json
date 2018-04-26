@@ -1,0 +1,85 @@
+{
+	"version": "2.0.0",
+
+	// Start PowerShell
+    "windows": {
+        "command": "C://Windows//sysnative//windowspowershell//v1.0//PowerShell.exe"
+    },
+    "linux": {
+        "command": "/usr/bin/powershell"
+    },
+    "osx": {
+        "command": "/usr/local/bin/powershell"
+    },
+
+	// The command is a shell script
+    "type": "shell",
+
+    "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass"
+    ],
+    "suppressTaskName": true,
+    "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+    },
+
+
+    // Associate with test task runner
+    "tasks": [
+        {
+            "taskName": "CreateDocs",
+            "group": "build",
+            "args": [
+                "Write-Host 'Invoking CreateDocs'; [Threading.Thread]::CurrentThread.CurrentUICulture = 'en-US'; ./helper/*.Create-Docs.ps1;",
+                "Invoke-Command { Write-Host 'Completed CreateDocs task in task runner.' }"
+            ]
+        },
+        {
+            "taskName": "UpdatePowerShellGallery",
+            "group": "build",
+            "args": [
+                "Write-Host 'Invoking UpdatePowerShellGallery'; Import-Module ./helper/Update-PowerShellGallery.ps1 -Force;",
+                "Update-PowerShellGallery -Path ./ -ApiKey $(Read-Host -Prompt ApiKey);",
+                "Invoke-Command { Write-Host 'Completed CreateDocs task in task runner.' }"
+            ]
+        },
+        {
+            "taskName": "UpdateManifestData-Patch",
+            "args": [
+                "Write-Host 'Invoking Patch UpdateManifestData'; Import-Module ./helper/Update-ModuleManifestData.ps1 -Force;",
+                "Update-ModuleManifestData -Path ./*.psd1 -Patch;",
+                "Invoke-Command { Write-Host 'Completed Patch UpdateManifestData task in task runner.' }"
+            ]
+        },
+        {
+            "taskName": "UpdateManifestData-Minor",
+            "args": [
+                "Write-Host 'Invoking Minor UpdateManifestData'; Import-Module ./helper/Update-ModuleManifestData.ps1 -Force;",
+                "Update-ModuleManifestData -Path ./*.psd1 -Minor;",
+                "Invoke-Command { Write-Host 'Completed Minor UpdateManifestData task in task runner.' }"
+            ]
+        },
+        {
+            "taskName": "UpdateManifestData-Major",
+            "args": [
+                "Write-Host 'Invoking Major UpdateManifestData'; Import-Module ./helper/Update-ModuleManifestData.ps1 -Force;",
+                "Update-ModuleManifestData -Path ./*.psd1 -Major;",
+                "Invoke-Command { Write-Host 'Completed Major UpdateManifestData task in task runner.' }"
+            ]
+        },
+        {
+            "taskName": "Run Test",
+            "args": [
+                "Write-Host 'Invoking Pester'; Invoke-Pester -PesterOption @{IncludeVSCodeMarker=$true};",
+                "Invoke-Command { Write-Host 'Completed Test task in task runner.' }"
+            ],
+            "group": "test",
+            "problemMatcher": "$pester"
+        }
+	]
+}
