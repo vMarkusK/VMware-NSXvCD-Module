@@ -9,7 +9,7 @@
 @{
 
 # Die diesem Manifest zugeordnete Skript- oder Binärmoduldatei.
-RootModule = 'VMware-NSXvCD-Module.psm1'
+# RootModule = 'VMware-NSXvCD-Module.psm1'
 
 # Die Versionsnummer dieses Moduls
 ModuleVersion = '0.1.0'
