@@ -7,7 +7,7 @@ Function Invoke-ApiCall {
     .NOTES
         File Name  : Invoke-ApiCall.ps1
         Author     : Markus Kraus
-        Version    : 1.0
+        Version    : 1.1
         State      : Ready
 
     .LINK
@@ -15,8 +15,20 @@ Function Invoke-ApiCall {
 
     .EXAMPLE
 
-    .PARAMETER Name
-        Name
+    .PARAMETER Server
+        Server
+
+    .PARAMETER Authorization
+        Authorization
+
+    .PARAMETER Uri
+        Uri
+
+    .PARAMETER Accept
+        Accept
+
+    .PARAMETER Method
+        Method
 
     #>
         Param (

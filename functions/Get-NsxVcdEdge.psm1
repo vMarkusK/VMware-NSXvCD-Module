@@ -7,7 +7,7 @@ Function Get-NsxVcdEdge {
     .NOTES
         File Name  : Get-NsxVcdEdge.ps1
         Author     : Markus Kraus
-        Version    : 1.0
+        Version    : 1.1
         State      : Ready
 
     .LINK
@@ -16,8 +16,11 @@ Function Get-NsxVcdEdge {
     .EXAMPLE
         Get-NsxVcdEdge | select Name, datacenterName, Id
 
-    .PARAMETER Name
-        Name
+    .PARAMETER Server
+        Server
+
+    .PARAMETER Authorization
+       Authorization
 
     #>
         Param (

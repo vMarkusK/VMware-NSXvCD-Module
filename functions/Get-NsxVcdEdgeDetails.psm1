@@ -7,16 +7,23 @@ Function Get-NsxVcdEdgeDetails {
     .NOTES
         File Name  : Get-NsxVcdEdgeDetails.ps1
         Author     : Markus Kraus
-        Version    : 1.0
+        Version    : 1.1
         State      : Ready
 
     .LINK
         https://mycloudrevolution.com/
 
     .EXAMPLE
+        Get-NsxVcdEdgeDetails -Id <Edge Id>
 
-    .PARAMETER Name
-        Name
+    .PARAMETER Server
+        Server
+
+    .PARAMETER Authorization
+        Authorization
+
+    .PARAMETER Id
+        Id
 
     #>
         Param (
