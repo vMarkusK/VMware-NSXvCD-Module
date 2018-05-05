@@ -32,9 +32,7 @@ Function Get-NsxVcdEdgeDetails {
         )
         Process {
 
-            $Uri = "https://$Server/network/edges/$Id"
-            $Headers =  @{'accept' = 'application/*+xml;version=' + $Global:ApiConnection.ApiVersion; 'x-vcloud-authorization' = $Authorization}
-            [XML]$EdgeDetails = Invoke-RestMethod -uri $Uri -Method Get -Headers $Headers
+            [XML]$EdgeDetails = Invoke-ApiCall -Uri "/network/edges/$Id" -Method "Get"
 
             $EdgeDetails.edge
         }

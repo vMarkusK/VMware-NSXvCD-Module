@@ -14,6 +14,7 @@ Function Get-NsxVcdEdge {
         https://mycloudrevolution.com/
 
     .EXAMPLE
+        Get-NsxVcdEdge | select Name, datacenterName, Id
 
     .PARAMETER Name
         Name
@@ -29,9 +30,7 @@ Function Get-NsxVcdEdge {
         )
         Process {
 
-            $Uri = "https://$Server/network/edges"
-            $Headers =  @{'accept' = 'application/*+xml;version=' + $Global:ApiConnection.ApiVersion; 'x-vcloud-authorization' = $Authorization}
-            [XML]$Edges = Invoke-RestMethod -uri $Uri -Method Get -Headers $Headers
+            [XML]$Edges = Invoke-ApiCall -Uri "/network/edges" -Method "Get"
 
             $Edges.pagedEdgeList.edgePage.edgeSummary
         }

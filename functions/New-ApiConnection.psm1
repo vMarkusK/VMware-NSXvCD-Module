@@ -63,5 +63,7 @@ Function New-ApiConnection {
             }
             #endregion
 
+            $Global:ApiConnection
+
         }
     }

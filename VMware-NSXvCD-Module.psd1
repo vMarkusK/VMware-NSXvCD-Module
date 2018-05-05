@@ -64,10 +64,11 @@ Copyright = '(c) 2018 Markus. Alle Rechte vorbehalten.'
 
 # Die Module, die als geschachtelte Module des in "RootModule/ModuleToProcess" angegebenen Moduls importiert werden sollen.
 NestedModules = @('functions\New-ApiConnection.psm1',
-               'functions\Get-NsxVcdEdge.psm1',
-               'functions\Get-NsxVcdEdgeDetails.psm1',
-               'functions\Get-NsxVcdEdgeFirewallRule.psm1'
-               )
+                'functions\Invoke-ApiCall.psm1',
+                'functions\Get-NsxVcdEdge.psm1',
+                'functions\Get-NsxVcdEdgeDetails.psm1',
+                'functions\Get-NsxVcdEdgeFirewallRule.psm1'
+                )
 
 # Aus diesem Modul zu exportierende Funktionen
 FunctionsToExport = '*'
