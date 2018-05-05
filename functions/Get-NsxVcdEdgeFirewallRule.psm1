@@ -7,16 +7,17 @@ Function Get-NsxVcdEdgeFirewallRule {
     .NOTES
         File Name  : Get-NsxVcdEdgeFirewallRule.ps1
         Author     : Markus Kraus
-        Version    : 1.0
+        Version    : 1.1
         State      : Ready
 
     .LINK
         https://mycloudrevolution.com/
 
     .EXAMPLE
+       Get-NsxVcdEdgeFirewallRule -Id <Edge Id>
 
-    .PARAMETER Name
-        Name
+    .PARAMETER Id
+        Id
 
     #>
         Param (

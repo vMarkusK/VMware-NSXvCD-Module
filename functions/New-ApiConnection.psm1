@@ -7,16 +7,20 @@ Function New-ApiConnection {
     .NOTES
         File Name  : New-ApiConnection.ps1
         Author     : Markus Kraus
-        Version    : 1.1
+        Version    : 1.2
         State      : Ready
 
     .LINK
         https://mycloudrevolution.com/
 
     .EXAMPLE
+        New-ApiConnection -Server <Server FQDN> -Credential $Credential
 
-    .PARAMETER Name
-        Name
+    .PARAMETER Server
+        Server
+
+    .PARAMETER Credential
+        Credential
 
     #>
         Param (

@@ -12,19 +12,19 @@
 # RootModule = 'VMware-NSXvCD-Module.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '0.1.0'
+ModuleVersion = '0.2.0'
 
 # ID zur eindeutigen Kennzeichnung dieses Moduls
 GUID = 'f28410b0-eebf-4194-a647-c5e5337f5cd9'
 
 # Autor dieses Moduls
-Author = 'Markus'
+Author = 'Markus Kraus'
 
 # Unternehmen oder Hersteller dieses Moduls
-CompanyName = 'Unbekannt'
+CompanyName = 'mycloudrevolution.com'
 
 # Urheberrechtserklärung für dieses Modul
-Copyright = '(c) 2018 Markus. Alle Rechte vorbehalten.'
+Copyright = '(c) 2018 Markus Kraus.'
 
 # Beschreibung der von diesem Modul bereitgestellten Funktionen
 # Description = ''
