@@ -27,8 +27,8 @@ Function Get-NsxVcdEdgeFirewallRule {
         )
         Process {
 
-            $Rules = (Get-NsxVcdEdgeDetails -Id 0f6f7f4e-d425-4e05-a6c4-426760abedcd).features.firewall.firewallRules.firewallRule
+            [XML]$Rules = Invoke-ApiCall -Uri "/network/edges/$Id/firewall/config" -Method "Get"
 
-            $Rules
+            $Rules.firewall.firewallRules.firewallRule
         }
     }
