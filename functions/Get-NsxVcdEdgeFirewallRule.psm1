@@ -7,7 +7,7 @@ Function Get-NsxVcdEdgeFirewallRule {
     .NOTES
         File Name  : Get-NsxVcdEdgeFirewallRule.ps1
         Author     : Markus Kraus
-        Version    : 1.1
+        Version    : 1.2
         State      : Ready
 
     .LINK
@@ -19,16 +19,29 @@ Function Get-NsxVcdEdgeFirewallRule {
     .PARAMETER Id
         Id
 
+    .PARAMETER RuleId
+        RuleId
+
     #>
         Param (
             [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Server")]
             [ValidateNotNullorEmpty()]
-                    [String] $Id
+                [String] $Id,
+            [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Server")]
+            [ValidateNotNullorEmpty()]
+                [Long] $RuleId
         )
         Process {
 
-            $Rules = (Get-NsxVcdEdgeDetails -Id 0f6f7f4e-d425-4e05-a6c4-426760abedcd).features.firewall.firewallRules.firewallRule
+            if ($RuleId) {
+                [XML]$Rules = Invoke-ApiCall -Uri "/network/edges/$Id/firewall/config/rules/$RuleId" -Method "Get"
+                $Rules.firewallRule
+            }
+            else {
+                [XML]$Rules = Invoke-ApiCall -Uri "/network/edges/$Id/firewall/config" -Method "Get"
+                $Rules.firewall.firewallRules.firewallRule
+            }
 
-            $Rules
+
         }
     }
