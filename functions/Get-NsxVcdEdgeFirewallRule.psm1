@@ -19,6 +19,9 @@ Function Get-NsxVcdEdgeFirewallRule {
     .PARAMETER Id
         Id
 
+    .PARAMETER RuleId
+        RuleId
+
     #>
         Param (
             [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Server")]
@@ -26,7 +29,7 @@ Function Get-NsxVcdEdgeFirewallRule {
                 [String] $Id,
             [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Server")]
             [ValidateNotNullorEmpty()]
-                [long] $RuleId
+                [Long] $RuleId
         )
         Process {
 
