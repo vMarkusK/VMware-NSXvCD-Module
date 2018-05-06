@@ -33,7 +33,7 @@ Function Get-NsxVcdDfwConfig {
     )
     Process {
 
-        [XML]$DfwConfig = Invoke-ApiCall -Uri "/firewall/globalroot-0/config" -Method "Get"
+        [XML]$DfwConfig = Invoke-ApiCall -Uri "/network/firewall/globalroot-0/config" -Method "Get"
 
         $DfwConfig
     }
