@@ -1,7 +1,25 @@
 $moduleRoot = Resolve-Path "$PSScriptRoot\.."
 $moduleName = "VMware-NSXvCD-Module"
 
-Describe "General project validation: $moduleName" {
+$EncryptedCred = "$env:LOCALAPPDATA\vscode-powershell\EncryptedNsxCred.clixml"
+if (Test-Path -LiteralPath $EncryptedCred) {
+    $Credentials = Import-CliXml $EncryptedCred
+}
+else {
+    $Credentials = Get-Credential
+    $Credentials | Export-CliXml "$env:LOCALAPPDATA\vscode-powershell\EncryptedNsxCred.clixml"
+}
+
+$NsxFqdn = "$env:LOCALAPPDATA\vscode-powershell\NsxFqdn.txt"
+if (Test-Path -LiteralPath $NsxFqdn) {
+    [String]$FQDN = Get-Content "$env:LOCALAPPDATA\vscode-powershell\NsxFqdn.txt"
+}
+else {
+    [String]$FQDN = Read-Host -Prompt 'FQDN'
+    $FQDN | Out-File -FilePath "$env:LOCALAPPDATA\vscode-powershell\NsxFqdn.txt"
+}
+
+Describe "General Code validation: $moduleName" {
 
     $scripts = Get-ChildItem $moduleRoot -Include *.ps1, *.psm1, *.psd1 -Recurse
     $testCase = $scripts | Foreach-Object {@{file = $_}}
@@ -36,3 +54,33 @@ Describe "General project validation: $moduleName" {
     }
 }
 
+Describe "Module Function validation: $moduleName" {
+
+    $modules = Get-ChildItem $moduleRoot -Include *.psd1 -Recurse
+    Import-Module $modules
+    if ($Global:ApiConnection) {
+        Remove-Variable ApiConnection
+    }
+
+    It "Connect API" {
+        New-ApiConnection -Server $FQDN -Credential $Credentials
+        ($Global:ApiConnection).GetType().Name | Should -Be "PSCustomObject"
+    }
+
+    It "Get Edges" {
+        [Array]$Edges = Get-NsxVcdEdge
+        $Edges.Count | Should -BeGreaterThan 0
+    }
+
+    It "Get Edge Details" {
+        [Array]$Edges = Get-NsxVcdEdge
+        $EdgeDetails = Get-NsxVcdEdgeDetails -Id $($Edges.Id | Select-Object -First 1)
+        $EdgeDetails.id | Should -Be $($Edges.Id | Select-Object -First 1)
+    }
+
+    It "Get Edge Firewall Rule" {
+        [Array]$Edges = Get-NsxVcdEdge
+        [Array]$EdgeFirewallRule = Get-NsxVcdEdgeFirewallRule -Id $($Edges.Id | Select-Object -First 1)
+        $EdgeFirewallRule.Count | Should -BeGreaterThan 0
+    }
+}
