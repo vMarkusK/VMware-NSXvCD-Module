@@ -74,13 +74,24 @@ Describe "Module Function validation: $moduleName" {
 
     It "Get Edge Details" {
         [Array]$Edges = Get-NsxVcdEdge
-        $EdgeDetails = Get-NsxVcdEdgeDetails -Id $($Edges.Id | Select-Object -First 1)
+        [Array]$EdgeDetails = Get-NsxVcdEdgeDetails -Id $($Edges.Id | Select-Object -First 1)
         $EdgeDetails.id | Should -Be $($Edges.Id | Select-Object -First 1)
+        $EdgeDetails.Count | Should -BeGreaterThan 0
+    }
+
+    It "Get Edge Details with Pipe" {
+        [Array]$EdgeDetails =  Get-NsxVcdEdge | Get-NsxVcdEdgeDetails
+        $EdgeDetails.Count | Should -BeGreaterThan 0
     }
 
     It "Get Edge Firewall Rule" {
         [Array]$Edges = Get-NsxVcdEdge
         [Array]$EdgeFirewallRule = Get-NsxVcdEdgeFirewallRule -Id $($Edges.Id | Select-Object -First 1)
+        $EdgeFirewallRule.Count | Should -BeGreaterThan 0
+    }
+
+    It "Get Edge Firewall Rule with Pipe" {
+        [Array]$EdgeFirewallRule = Get-NsxVcdEdge | Get-NsxVcdEdgeFirewallRule
         $EdgeFirewallRule.Count | Should -BeGreaterThan 0
     }
 }

@@ -15,6 +15,10 @@ Function Get-NsxVcdEdgeFirewallRule {
     .EXAMPLE
        Get-NsxVcdEdgeFirewallRule -Id <Edge Id>
 
+
+    .EXAMPLE
+        Get-NsxVcdEdge | Get-NsxVcdEdgeFirewallRule | ft -AutoSize
+
     .PARAMETER Id
         Id of the Edge Gateway
 
@@ -26,7 +30,7 @@ Function Get-NsxVcdEdgeFirewallRule {
 
     #>
         Param (
-            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Id of the Edge Gateway")]
+            [Parameter(Mandatory=$True, ValueFromPipelineByPropertyName=$True, ValueFromPipeline=$True, HelpMessage="Id of the Edge Gateway")]
             [ValidateNotNullorEmpty()]
                 [String] $Id,
             [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="RuleId of the Firewall Rule")]
