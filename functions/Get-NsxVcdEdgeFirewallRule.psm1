@@ -28,6 +28,9 @@ Function Get-NsxVcdEdgeFirewallRule {
     .PARAMETER RuleId
         RuleId of the Firewall Rule
 
+    .PARAMETER OutputXML
+        Output the result as XML
+
     #>
         Param (
             [Parameter(Mandatory=$True, ValueFromPipelineByPropertyName=$True, ValueFromPipeline=$True, HelpMessage="Id of the Edge Gateway")]
@@ -35,17 +38,31 @@ Function Get-NsxVcdEdgeFirewallRule {
                 [String] $Id,
             [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="RuleId of the Firewall Rule")]
             [ValidateNotNullorEmpty()]
-                [Long] $RuleId
+                [Long] $RuleId,
+            [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Display Rules as XML")]
+            [ValidateNotNullorEmpty()]
+                [Switch] $OutputXML
         )
         Process {
 
             if ($RuleId) {
                 [XML]$Rules = Invoke-ApiCall -Uri "/network/edges/$Id/firewall/config/rules/$RuleId" -Method "Get"
-                $Rules.firewallRule
+                if ($OutputXML) {
+                    $Rules | Format-XML
+                }
+                else {
+                    $Rules.firewallRule
+                }
+
             }
             else {
                 [XML]$Rules = Invoke-ApiCall -Uri "/network/edges/$Id/firewall/config" -Method "Get"
-                $Rules.firewall.firewallRules.firewallRule
+                if ($OutputXML) {
+                    $Rules.firewall.firewallRules | Format-XML
+                }
+                else {
+                    $Rules.firewall.firewallRules.firewallRule
+                }
             }
 
         }
