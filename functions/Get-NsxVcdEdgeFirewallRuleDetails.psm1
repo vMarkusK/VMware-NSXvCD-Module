@@ -9,8 +9,8 @@ Function Get-NsxVcdEdgeFirewallRuleDetails {
     .NOTES
         File Name  : Get-NsxVcdEdgeFirewallRuleDetails.ps1
         Author     : Markus Kraus
-        Version    : 0.5
-        State      : Test
+        Version    : 1.0
+        State      : Ready
 
     .LINK
         https://mycloudrevolution.com/
@@ -45,7 +45,7 @@ Function Get-NsxVcdEdgeFirewallRuleDetails {
 
             "Summary:"
             "--------"
-            $Rule.firewallRule | Format-List
+            $Rule.firewallRule | Select-Object id, ruleTag, name, ruleType, enabled, loggingEnabled, action |  Format-List
 
             "Source:"
             "-------"
