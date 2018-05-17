@@ -70,7 +70,7 @@ Properties {
 
     # Path to the release notes file.  Set to $null if the release notes reside in the manifest file.
     [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
-    $ReleaseNotesPath = $null
+    $ReleaseNotesPath = "$PSScriptRoot\ReleaseNotes.md"
 
     # The directory used to publish the module from.  If you are using Git, the
     # $PublishRootDir should be ignored if it is under the workspace directory.
