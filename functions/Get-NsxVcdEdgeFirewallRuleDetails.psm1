@@ -3,6 +3,9 @@ Function Get-NsxVcdEdgeFirewallRuleDetails {
     .DESCRIPTION
         Returnes Details of a Firewall Rule of the Edge Gatway.
 
+        Note:
+        Only User Rules can be displayed
+
     .NOTES
         File Name  : Get-NsxVcdEdgeFirewallRuleDetails.ps1
         Author     : Markus Kraus
@@ -14,7 +17,6 @@ Function Get-NsxVcdEdgeFirewallRuleDetails {
 
     .EXAMPLE
        Get-NsxVcdEdgeFirewallRuleDetails -Id <Edge Id> -RuleId <RuleId>
-
 
     .EXAMPLE
         Get-NsxVcdEdge | Get-NsxVcdEdgeFirewallRuleDetails -RuleId <RuleId>
