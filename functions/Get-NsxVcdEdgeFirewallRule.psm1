@@ -1,8 +1,7 @@
 Function Get-NsxVcdEdgeFirewallRule {
     <#
-    .SYNOPSIS
-
     .DESCRIPTION
+        Returnes the of the Firewall Rules of the Edge Gatway.
 
     .NOTES
         File Name  : Get-NsxVcdEdgeFirewallRule.ps1
@@ -17,17 +16,20 @@ Function Get-NsxVcdEdgeFirewallRule {
        Get-NsxVcdEdgeFirewallRule -Id <Edge Id>
 
     .PARAMETER Id
-        Id
+        Id of the Edge Gateway
+
+        Note:
+        You can list all Ids of your edges by: 'Get-NsxVcdEdge | select Name, datacenterName, Id'
 
     .PARAMETER RuleId
-        RuleId
+        RuleId of the Firewall Rule
 
     #>
         Param (
-            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Server")]
+            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Id of the Edge Gateway")]
             [ValidateNotNullorEmpty()]
                 [String] $Id,
-            [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Server")]
+            [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="RuleId of the Firewall Rule")]
             [ValidateNotNullorEmpty()]
                 [Long] $RuleId
         )
@@ -41,7 +43,6 @@ Function Get-NsxVcdEdgeFirewallRule {
                 [XML]$Rules = Invoke-ApiCall -Uri "/network/edges/$Id/firewall/config" -Method "Get"
                 $Rules.firewall.firewallRules.firewallRule
             }
-
 
         }
     }

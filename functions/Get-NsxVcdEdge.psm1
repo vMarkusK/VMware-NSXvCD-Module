@@ -1,8 +1,7 @@
 Function Get-NsxVcdEdge {
     <#
-    .SYNOPSIS
-
     .DESCRIPTION
+        Returnes all Edge Gatways.
 
     .NOTES
         File Name  : Get-NsxVcdEdge.ps1
@@ -14,22 +13,14 @@ Function Get-NsxVcdEdge {
         https://mycloudrevolution.com/
 
     .EXAMPLE
-        Get-NsxVcdEdge | select Name, datacenterName, Id
+        Get-NsxVcdEdge
 
-    .PARAMETER Server
-        Server
-
-    .PARAMETER Authorization
-       Authorization
+    .EXAMPLE
+        Get-NsxVcdEdge | select Name, datacenterName, Id | ft -AutoSize
 
     #>
         Param (
-            [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Server")]
-            [ValidateNotNullorEmpty()]
-                [String] $Server = $Global:ApiConnection.Server,
-            [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Authorization")]
-            [ValidateNotNullorEmpty()]
-                [String] $Authorization = $Global:ApiConnection.Authorization
+
         )
         Process {
 

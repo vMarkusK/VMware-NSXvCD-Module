@@ -1,8 +1,7 @@
 Function New-ApiConnection {
     <#
-    .SYNOPSIS
-
     .DESCRIPTION
+        Connects to the API of your vCloud Director instance. The Session is saved for further use.
 
     .NOTES
         File Name  : New-ApiConnection.ps1
@@ -17,17 +16,20 @@ Function New-ApiConnection {
         New-ApiConnection -Server <Server FQDN> -Credential $Credential
 
     .PARAMETER Server
-        Server
+        FQDN of the vCloud Director Instance
 
     .PARAMETER Credential
-        Credential
+        API Credentials for the vCloud Director Instance
+
+        Note:
+        Username needs to be: <User>@<Org> (Administrtator@system)
 
     #>
         Param (
-            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Server")]
+            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="FQDN of the vCloud Director Instance")]
             [ValidateNotNullorEmpty()]
                 [String] $Server,
-            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Credential")]
+            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="API Credentials for the vCloud Director Instance")]
             [ValidateNotNullorEmpty()]
                 [PSCredential] $Credential
         )

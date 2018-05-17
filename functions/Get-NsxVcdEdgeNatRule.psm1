@@ -1,8 +1,7 @@
 Function Get-NsxVcdEdgeNatRule {
     <#
-    .SYNOPSIS
-
     .DESCRIPTION
+        Returnes all NAT Rules of the Edge Gatway.
 
     .NOTES
         File Name  : Get-NsxVcdEdgeNatRule.ps1
@@ -17,11 +16,14 @@ Function Get-NsxVcdEdgeNatRule {
        Get-NsxVcdEdgeNatRule -Id <Edge Id>
 
     .PARAMETER Id
-        Id
+        Id of the Edge Gateway
+
+        Note:
+        You can list all Ids of your edges by: 'Get-NsxVcdEdge | select Name, datacenterName, Id'
 
     #>
         Param (
-            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Server")]
+            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Id of the Edge Gateway")]
             [ValidateNotNullorEmpty()]
                 [String] $Id
         )

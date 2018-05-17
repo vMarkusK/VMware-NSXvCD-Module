@@ -1,8 +1,7 @@
 Function Get-NsxVcdEdgeDetails {
     <#
-    .SYNOPSIS
-
     .DESCRIPTION
+        Returnes Details of the Edge Gatway.
 
     .NOTES
         File Name  : Get-NsxVcdEdgeDetails.ps1
@@ -19,18 +18,15 @@ Function Get-NsxVcdEdgeDetails {
     .EXAMPLE
         Get-NsxVcdEdge | Get-NsxVcdEdgeDetails | ft -AutoSize
 
-    .PARAMETER Server
-        Server
-
-    .PARAMETER Authorization
-        Authorization
-
     .PARAMETER Id
-        Id
+        Id of the Edge Gateway
+
+        Note:
+        You can list all Ids of your edges by: 'Get-NsxVcdEdge | select Name, datacenterName, Id'
 
     #>
         Param (
-            [Parameter(Mandatory=$True, ValueFromPipelineByPropertyName=$True, ValueFromPipeline=$True, HelpMessage="Server")]
+            [Parameter(Mandatory=$True, ValueFromPipelineByPropertyName=$True, ValueFromPipeline=$True, HelpMessage="Id of the Edge Gateway")]
             [ValidateNotNullorEmpty()]
                     [String] $Id
         )

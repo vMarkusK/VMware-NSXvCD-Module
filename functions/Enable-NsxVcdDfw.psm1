@@ -1,39 +1,26 @@
 Function Enable-NsxVcdDfw {
     <#
-    .SYNOPSIS
-
     .DESCRIPTION
+        Enables the Distributed Firewall for the OrgVdc.
 
     .NOTES
         File Name  : Enable-NsxVcdDfw.ps1
         Author     : Markus Kraus
-        Version    : 1.0
-        State      : Ready
+        Version    : 0.2
+        State      : Test
 
     .LINK
         https://mycloudrevolution.com/
 
     .EXAMPLE
-       Enable-NsxVcdDfw
-
-    .PARAMETER Server
-        Server
-
-    .PARAMETER Authorization
-        Authorization
+       Enable-NsxVcdDfw -Id <OrgVdc Id>
 
     .PARAMETER Id
-        OrgVdc Id
+        Id of the OrgVdc
 
     #>
     Param (
-        [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Server")]
-        [ValidateNotNullorEmpty()]
-            [String] $Server = $Global:ApiConnection.Server,
-        [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Authorization")]
-        [ValidateNotNullorEmpty()]
-            [String] $Authorization = $Global:ApiConnection.Authorization,
-        [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Authorization")]
+        [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Id of the OrgVdc")]
         [ValidateNotNullorEmpty()]
             [String] $Id
     )

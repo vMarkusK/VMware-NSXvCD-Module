@@ -1,8 +1,7 @@
 Function Get-NsxVcdEdgeFirewallRuleStats {
     <#
-    .SYNOPSIS
-
     .DESCRIPTION
+        Returnes the Stats of the Firewall Rule of the Edge Gatway.
 
     .NOTES
         File Name  : Get-NsxVcdEdgeFirewallRuleStats.ps1
@@ -17,17 +16,20 @@ Function Get-NsxVcdEdgeFirewallRuleStats {
        Get-NsxVcdEdgeFirewallRuleStats -Id <Edge Id> -RuleId <Rule Id>
 
     .PARAMETER Id
-        Id
+        Id of the Edge Gateway
+
+        Note:
+        You can list all Ids of your edges by: 'Get-NsxVcdEdge | select Name, datacenterName, Id'
 
     .PARAMETER RuleId
-        RuleId
+        RuleId of the Firewall Rule
 
     #>
         Param (
-            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Server")]
+            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Id of the Edge Gateway")]
             [ValidateNotNullorEmpty()]
                 [String] $Id,
-            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Server")]
+            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="RuleId of the Firewall Rule")]
             [ValidateNotNullorEmpty()]
                 [Long] $RuleId
         )
