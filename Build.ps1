@@ -69,15 +69,24 @@ Properties {
                    Foreach-Object {$null = Test-ModuleManifest -Path $_ -ErrorAction SilentlyContinue; if ($?) {$_}})[0].BaseName
 
     # Path to the release notes file.  Set to $null if the release notes reside in the manifest file.
+    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
     $ReleaseNotesPath = $null
 
     # The directory used to publish the module from.  If you are using Git, the
     # $PublishRootDir should be ignored if it is under the workspace directory.
     $PublishRootDir = "$PSScriptRoot\Release"
+    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
     $PublishDir     = "$PublishRootDir\$ModuleName"
+
+    # Docs
+    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
+    $DocsRootDir = "$PSScriptRoot\docs"
+    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
+    $DefaultLocale = 'en-US'
 
     # The following items will not be copied to the $PublishDir.
     # Add items that should not be published with the module.
+    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
     $Exclude = @(
         (Split-Path $PSCommandPath -Leaf),
         'Release',
@@ -96,13 +105,16 @@ Properties {
     )
 
     # Name of the repository you wish to publish to. Default repo is the PSGallery.
+    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
     $PublishRepository = $null
 
     # Your NuGet API key for the PSGallery.  Leave it as $null and the first time
     # you publish you will be prompted to enter your API key.  The build will
     # store the key encrypted in a file, so that on subsequent publishes you
     # will no longer be prompted for the API key.
+    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
     $NuGetApiKey = $null
+    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
     $EncryptedApiKeyPath = "$env:LOCALAPPDATA\vscode-powershell\NuGetApiKey.clixml"
 }
 
@@ -121,7 +133,7 @@ Task PostPublish {
 ###############################################################################
 Task default -depends Build
 
-Task Publish -depends Test, PrePublish, PublishImpl, PostPublish {
+Task Publish -depends Test, BuildHelp, PrePublish, PublishImpl, PostPublish {
 }
 
 Task PublishImpl -depends Test -requiredVariables EncryptedApiKeyPath, PublishDir {
@@ -195,6 +207,7 @@ Task RemoveKey -requiredVariables EncryptedApiKeyPath {
 }
 
 Task StoreKey -requiredVariables EncryptedApiKeyPath {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
     $nuGetApiKeyCred = PromptUserForNuGetApiKeyCredential -DestinationPath $EncryptedApiKeyPath
     "The NuGetApiKey has been stored in $EncryptedApiKeyPath"
 }
@@ -224,6 +237,63 @@ Task ShowFullKey -requiredVariables EncryptedApiKeyPath {
 Task ? -description 'Lists the available tasks' {
     "Available tasks:"
     $PSake.Context.Peek().Tasks.Keys | Sort-Object
+}
+
+
+Task BuildHelp -depends Build, GenerateMarkdown, GenerateHelpFiles {
+}
+
+Task GenerateMarkdown -requiredVariables DefaultLocale, DocsRootDir, ModuleName, PublishDir {
+    if (!(Get-Module platyPS -ListAvailable)) {
+        "platyPS module is not installed. Skipping $($psake.context.currentTaskName) task."
+        return
+    }
+
+    $moduleInfo = Import-Module $PublishDir\$ModuleName.psd1 -Global -Force -PassThru
+
+    try {
+        if ($moduleInfo.ExportedCommands.Count -eq 0) {
+            "No commands have been exported. Skipping $($psake.context.currentTaskName) task."
+            return
+        }
+
+        if (!(Test-Path -LiteralPath $DocsRootDir)) {
+            New-Item $DocsRootDir -ItemType Directory > $null
+        }
+
+        if (Get-ChildItem -LiteralPath $DocsRootDir -Filter *.md -Recurse) {
+            Get-ChildItem -LiteralPath $DocsRootDir -Directory | ForEach-Object {
+                Update-MarkdownHelp -Path $_.FullName -Verbose:$VerbosePreference > $null
+            }
+        }
+
+        # ErrorAction set to SilentlyContinue so this command will not overwrite an existing MD file.
+        New-MarkdownHelp -Module $ModuleName -Locale $DefaultLocale -OutputFolder $DocsRootDir\$DefaultLocale `
+                         -WithModulePage:$false -ErrorAction SilentlyContinue -Verbose:$VerbosePreference > $null
+    }
+    finally {
+        Remove-Module $ModuleName
+    }
+}
+
+Task GenerateHelpFiles -requiredVariables DocsRootDir, ModuleName, PublishDir {
+    if (!(Get-Module platyPS -ListAvailable)) {
+        "platyPS module is not installed. Skipping $($psake.context.currentTaskName) task."
+        return
+    }
+
+    if (!(Get-ChildItem -LiteralPath $DocsRootDir -Filter *.md -Recurse -ErrorAction SilentlyContinue)) {
+        "No markdown help files to process. Skipping $($psake.context.currentTaskName) task."
+        return
+    }
+
+    $helpLocales = (Get-ChildItem -Path $DocsRootDir -Directory).Name
+
+    # Generate the module's primary MAML help file.
+    foreach ($locale in $helpLocales) {
+        New-ExternalHelp -Path $DocsRootDir\$locale -OutputPath $PublishDir\$locale -Force `
+                         -ErrorAction SilentlyContinue -Verbose:$VerbosePreference > $null
+    }
 }
 
 ###############################################################################

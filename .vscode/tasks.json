@@ -83,6 +83,16 @@
             "problemMatcher": []
         },
         {
+            "label": "BuildHelp",
+            "type": "shell",
+            "command": "Invoke-PSake build.ps1 -taskList BuildHelp",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "Test",
             "type": "shell",
             "command": "Import-Module Pester; Invoke-Pester -PesterOption @{IncludeVSCodeMarker=$true}",
