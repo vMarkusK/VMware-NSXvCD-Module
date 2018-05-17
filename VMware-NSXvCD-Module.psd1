@@ -12,7 +12,7 @@
 # RootModule = 'VMware-NSXvCD-Module.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '0.8.0'
+ModuleVersion = '0.9.0'
 
 # ID zur eindeutigen Kennzeichnung dieses Moduls
 GUID = 'f28410b0-eebf-4194-a647-c5e5337f5cd9'
@@ -68,13 +68,14 @@ NestedModules = @('functions\New-ApiConnection.psm1',
                 'functions\Get-NsxVcdEdge.psm1',
                 'functions\Get-NsxVcdEdgeDetails.psm1',
                 'functions\Get-NsxVcdEdgeFirewallRule.psm1',
+                'functions\Get-NsxVcdEdgeFirewallRuleDetails.psm1',
                 'functions\Get-NsxVcdEdgeFirewallRuleStats.psm1',
                 'functions\Get-NsxVcdEdgeNatRule.psm1',
                 'functions\Enable-NsxVcdDfw.psm1'
                 )
 
 # Aus diesem Modul zu exportierende Funktionen
-FunctionsToExport = 'New-ApiConnection', 'Invoke-ApiCall', 'Get-NsxVcdEdge', 'Get-NsxVcdEdgeDetails', 'Get-NsxVcdEdgeFirewallRule', '\Get-NsxVcdEdgeFirewallRuleStats', 'Get-NsxVcdEdgeNatRule', 'Enable-NsxVcdDfw'
+FunctionsToExport = 'New-ApiConnection', 'Invoke-ApiCall', 'Get-NsxVcdEdge', 'Get-NsxVcdEdgeDetails', 'Get-NsxVcdEdgeFirewallRule', 'Get-NsxVcdEdgeFirewallRuleDetails', '\Get-NsxVcdEdgeFirewallRuleStats', 'Get-NsxVcdEdgeNatRule', 'Enable-NsxVcdDfw'
 
 # Aus diesem Modul zu exportierende Cmdlets
 #CmdletsToExport = '*'
