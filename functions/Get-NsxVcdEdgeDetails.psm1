@@ -16,6 +16,9 @@ Function Get-NsxVcdEdgeDetails {
     .EXAMPLE
         Get-NsxVcdEdgeDetails -Id <Edge Id>
 
+    .EXAMPLE
+        Get-NsxVcdEdge | Get-NsxVcdEdgeDetails | ft -AutoSize
+
     .PARAMETER Server
         Server
 
@@ -27,13 +30,7 @@ Function Get-NsxVcdEdgeDetails {
 
     #>
         Param (
-            [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Server")]
-            [ValidateNotNullorEmpty()]
-                [String] $Server = $Global:ApiConnection.Server,
-            [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Authorization")]
-            [ValidateNotNullorEmpty()]
-                [String] $Authorization = $Global:ApiConnection.Authorization,
-            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Server")]
+            [Parameter(Mandatory=$True, ValueFromPipelineByPropertyName=$True, ValueFromPipeline=$True, HelpMessage="Server")]
             [ValidateNotNullorEmpty()]
                     [String] $Id
         )
