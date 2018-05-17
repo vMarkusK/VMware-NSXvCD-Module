@@ -12,7 +12,7 @@
 # RootModule = 'VMware-NSXvCD-Module.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '0.6.0'
+ModuleVersion = '0.7.0'
 
 # ID zur eindeutigen Kennzeichnung dieses Moduls
 GUID = 'f28410b0-eebf-4194-a647-c5e5337f5cd9'
