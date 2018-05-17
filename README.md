@@ -19,4 +19,10 @@ MY CLOUD-(R)EVOLUTION [mycloudrevolution.com](http://mycloudrevolution.com/)
 
 The 'VMware-NSXvCD-Module' leverages the vCloud Directpr API for NSX.
 
+# Pester Tests
+
+![Pester](/media/Pester.png)
+
+
+
 
