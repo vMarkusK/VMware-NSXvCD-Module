@@ -15,7 +15,9 @@ Function Get-NsxVcdEdgeFirewallRuleStats {
     .EXAMPLE
        Get-NsxVcdEdgeFirewallRuleStats -Id <Edge Id> -RuleId <Rule Id>
 
+    .EXAMPLE
        Get-NsxVcdEdge | where {$_.name -like "<Edge Name>"} | Get-NsxVcdEdgeFirewallRuleStats -RuleId <Rule Id>
+
     .PARAMETER Id
         Id of the Edge Gateway
 
