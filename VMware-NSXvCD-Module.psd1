@@ -74,16 +74,16 @@ NestedModules = @('functions\New-ApiConnection.psm1',
                 )
 
 # Aus diesem Modul zu exportierende Funktionen
-FunctionsToExport = '*'
+FunctionsToExport = 'New-ApiConnection', 'Invoke-ApiCall', 'Get-NsxVcdEdge', 'Get-NsxVcdEdgeDetails', 'Get-NsxVcdEdgeFirewallRule', '\Get-NsxVcdEdgeFirewallRuleStats', 'Get-NsxVcdEdgeNatRule', 'Enable-NsxVcdDfw'
 
 # Aus diesem Modul zu exportierende Cmdlets
-CmdletsToExport = '*'
+#CmdletsToExport = '*'
 
 # Die aus diesem Modul zu exportierenden Variablen
-VariablesToExport = '*'
+#VariablesToExport = '*'
 
 # Aus diesem Modul zu exportierende Aliase
-AliasesToExport = '*'
+#AliasesToExport = '*'
 
 # Aus diesem Modul zu exportierende DSC-Ressourcen
 # DscResourcesToExport = @()
