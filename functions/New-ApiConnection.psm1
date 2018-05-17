@@ -44,13 +44,14 @@ Function New-ApiConnection {
             #region: Api Versions
             $Uri = "https://$Server/api/versions"
             [xml]$Versions = Invoke-WebRequest -Uri $Uri -Method Get
-            $LatestVersion = $Versions.SupportedVersions.VersionInfo | Where-Object {$_.deprecated -eq $false} | Select-Object -Last 1
+            $VersionNumbers = ($Versions.SupportedVersions.VersionInfo | Where-Object {$_.deprecated -eq $false}).Version
+            $LatestVersion  = $VersionNumbers | ForEach-Object { [Decimal] $_ } | Sort-Object -descending | Select-Object -First 1
             #endregion
 
             #region: Login
             $Uri = "https://$Server/api/sessions"
             $Authorization = 'Basic {0}' -f $BasicAuth
-            $Headers =  @{'accept' = 'application/vnd.vmware.vcloud.session+xml;version=' + [String]$LatestVersion.Version ; 'Authorization' = $Authorization}
+            $Headers =  @{'accept' = 'application/vnd.vmware.vcloud.session+xml;version=' + [String]$LatestVersion ; 'Authorization' = $Authorization}
             $Login = Invoke-WebRequest -Uri $Uri -Headers $Headers -Method Post
             $LoginDate = Get-Date
             #endregion
@@ -65,7 +66,7 @@ Function New-ApiConnection {
                 Server = $Server
                 Authorization = [String]$Login.Headers.'x-vcloud-authorization'
                 LoginDate = [String]$LoginDate.ToString()
-                ApiVersion = [String]$LatestVersion.Version
+                ApiVersion = [String]$LatestVersion
             }
             #endregion
 
