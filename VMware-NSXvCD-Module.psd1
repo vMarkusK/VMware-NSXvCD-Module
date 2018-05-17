@@ -106,7 +106,7 @@ PrivateData = @{
         LicenseUri = 'https://github.com/mycloudrevolution/VMware-NSXvCD-Module/blob/master/LICENSE'
 
         # Eine URL zur Hauptwebsite für dieses Projekt.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/mycloudrevolution/VMware-NSXvCD-Module'
 
         # Eine URL zu einem Symbol, das das Modul darstellt.
         # IconUri = ''
