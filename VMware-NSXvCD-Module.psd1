@@ -100,10 +100,10 @@ PrivateData = @{
     PSData = @{
 
         # 'Tags' wurde auf das Modul angewendet und unterstützt die Modulermittlung in Onlinekatalogen.
-        # Tags = @()
+        Tags = @('VMware', 'vCloud', 'NSX', 'vCloudDirector', 'Automation', 'EdgeGateway', 'DFW')
 
         # Eine URL zur Lizenz für dieses Modul.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/mycloudrevolution/VMware-NSXvCD-Module/blob/master/LICENSE'
 
         # Eine URL zur Hauptwebsite für dieses Projekt.
         # ProjectUri = ''
