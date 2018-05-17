@@ -6,7 +6,7 @@ Function Get-NsxVcdEdgeNatRule {
     .NOTES
         File Name  : Get-NsxVcdEdgeNatRule.ps1
         Author     : Markus Kraus
-        Version    : 1.0
+        Version    : 1.1
         State      : Ready
 
     .LINK
@@ -14,6 +14,9 @@ Function Get-NsxVcdEdgeNatRule {
 
     .EXAMPLE
        Get-NsxVcdEdgeNatRule -Id EdgeId
+
+    .EXAMPLE
+        Get-NsxVcdEdge -OrgVdcName OrgVdcName | Get-NsxVcdEdgeNatRule | ft -AutoSize
 
     .PARAMETER Id
         Id of the Edge Gateway
@@ -23,7 +26,7 @@ Function Get-NsxVcdEdgeNatRule {
 
     #>
         Param (
-            [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Id of the Edge Gateway")]
+            [Parameter(Mandatory=$False, ValueFromPipelineByPropertyName=$True, ValueFromPipeline=$True, HelpMessage="Id of the Edge Gateway")]
             [ValidateNotNullorEmpty()]
                 [String] $Id
         )

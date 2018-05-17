@@ -94,4 +94,9 @@ Describe "Module Function validation: $moduleName" {
         [Array]$EdgeFirewallRule = Get-NsxVcdEdge | Get-NsxVcdEdgeFirewallRule
         $EdgeFirewallRule.Count | Should -BeGreaterThan 0
     }
+
+    It "Get Edge Nat Rule with Pipe" {
+        [Array]$EdgeNsxVcdEdgeNatRule = Get-NsxVcdEdge | Get-NsxVcdEdgeNatRule
+        $EdgeNsxVcdEdgeNatRule.Count | Should -BeGreaterThan 0
+    }
 }
