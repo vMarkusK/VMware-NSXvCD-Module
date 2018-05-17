@@ -12,7 +12,7 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-Get-NsxVcdEdgeNatRule [-Id] <String> [<CommonParameters>]
+Get-NsxVcdEdgeNatRule [[-Id] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -23,6 +23,11 @@ Returnes all NAT Rules of the Edge Gatway.
 ### EXAMPLE 1
 ```
 Get-NsxVcdEdgeNatRule -Id EdgeId
+```
+
+### EXAMPLE 2
+```
+Get-NsxVcdEdge -OrgVdcName OrgVdcName | Get-NsxVcdEdgeNatRule | ft -AutoSize
 ```
 
 ## PARAMETERS
@@ -38,10 +43,10 @@ Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -56,7 +61,7 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 ## NOTES
 File Name  : Get-NsxVcdEdgeNatRule.ps1
 Author     : Markus Kraus
-Version    : 1.0
+Version    : 1.1
 State      : Ready
 
 ## RELATED LINKS
