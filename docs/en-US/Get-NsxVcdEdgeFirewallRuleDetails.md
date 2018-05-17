@@ -23,14 +23,14 @@ Only User Rules can be displayed
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
--RuleId <RuleId>
-```
-
-### BEISPIEL 2
+Get-NsxVcdEdgeFirewallRuleDetails -Id EdgeId  -RuleId FirewallRuleId
 ```
 
+### EXAMPLE 2
+```
+Get-NsxVcdEdge | Get-NsxVcdEdgeFirewallRuleDetails -RuleId FirewallRuleId
 ```
 
 ## PARAMETERS

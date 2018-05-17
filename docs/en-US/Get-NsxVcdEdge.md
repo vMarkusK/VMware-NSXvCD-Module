@@ -20,22 +20,22 @@ Returnes Edge Gatways.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Get-NsxVcdEdge
 ```
 
-### BEISPIEL 2
+### EXAMPLE 2
+```
+Get-NsxVcdEdge -Name YourEdgeName
 ```
 
+### EXAMPLE 3
+```
+Get-NsxVcdEdge -OrgVdcName YourOrgName
 ```
 
-### BEISPIEL 3
-```
-
-```
-
-### BEISPIEL 4
+### EXAMPLE 4
 ```
 Get-NsxVcdEdge | select Name, datacenterName, Id | ft -AutoSize
 ```

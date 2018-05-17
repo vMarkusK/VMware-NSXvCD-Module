@@ -21,7 +21,7 @@ Helper Function to call the vCloud Director API.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
 Invoke-ApiCall -Uri "/network/edges/$Id/nat/config" -Method "Get"
 ```

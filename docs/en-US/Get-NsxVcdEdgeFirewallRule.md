@@ -20,12 +20,12 @@ Returnes the of the Firewall Rules of the Edge Gatway.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
+```
+Get-NsxVcdEdgeFirewallRule -Id EdgeId
 ```
 
-```
-
-### BEISPIEL 2
+### EXAMPLE 2
 ```
 Get-NsxVcdEdge | Get-NsxVcdEdgeFirewallRule | ft -AutoSize
 ```

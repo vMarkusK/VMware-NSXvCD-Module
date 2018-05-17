@@ -13,7 +13,7 @@ Function Enable-NsxVcdDfw {
         https://mycloudrevolution.com/
 
     .EXAMPLE
-       Enable-NsxVcdDfw -Id <OrgVdc Id>
+       Enable-NsxVcdDfw -Id OrgVdcId
 
     .PARAMETER Id
         Id of the OrgVdc

@@ -20,14 +20,14 @@ Returnes the Stats of the Firewall Rule of the Edge Gatway.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
--RuleId <Rule Id>
+Get-NsxVcdEdgeFirewallRuleStats -Id EdgeId -RuleId FirewallRuleId
 ```
 
-### BEISPIEL 2
+### EXAMPLE 2
 ```
-"} | Get-NsxVcdEdgeFirewallRuleStats -RuleId <Rule Id>
+Get-NsxVcdEdge | where {$_.name -like EdgeName} | Get-NsxVcdEdgeFirewallRuleStats -RuleId FirewallRuleId
 ```
 
 ## PARAMETERS

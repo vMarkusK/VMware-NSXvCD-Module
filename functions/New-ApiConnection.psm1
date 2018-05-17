@@ -13,7 +13,7 @@ Function New-ApiConnection {
         https://mycloudrevolution.com/
 
     .EXAMPLE
-        New-ApiConnection -Server <Server FQDN> -Credential $Credential
+        New-ApiConnection -Server ServerFQDN -Credential $Credential
 
     .PARAMETER Server
         FQDN of the vCloud Director Instance

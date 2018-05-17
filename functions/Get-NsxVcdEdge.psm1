@@ -16,10 +16,10 @@ Function Get-NsxVcdEdge {
         Get-NsxVcdEdge
 
     .EXAMPLE
-        Get-NsxVcdEdge -Name <Edge Name>
+        Get-NsxVcdEdge -Name YourEdgeName
 
     .EXAMPLE
-        Get-NsxVcdEdge -OrgVdcName <Edge OrgVdc Name>
+        Get-NsxVcdEdge -OrgVdcName YourOrgName
 
     .EXAMPLE
         Get-NsxVcdEdge | select Name, datacenterName, Id | ft -AutoSize

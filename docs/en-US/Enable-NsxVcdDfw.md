@@ -20,9 +20,9 @@ Enables the Distributed Firewall for the OrgVdc.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
-
+Enable-NsxVcdDfw -Id OrgVdcId
 ```
 
 ## PARAMETERS

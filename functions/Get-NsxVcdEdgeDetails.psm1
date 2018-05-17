@@ -13,7 +13,7 @@ Function Get-NsxVcdEdgeDetails {
         https://mycloudrevolution.com/
 
     .EXAMPLE
-        Get-NsxVcdEdgeDetails -Id <Edge Id>
+        Get-NsxVcdEdgeDetails -Id EdgeId
 
     .EXAMPLE
         Get-NsxVcdEdge | Get-NsxVcdEdgeDetails | ft -AutoSize

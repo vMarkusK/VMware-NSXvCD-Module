@@ -20,9 +20,9 @@ Returnes all NAT Rules of the Edge Gatway.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
-
+Get-NsxVcdEdgeNatRule -Id EdgeId
 ```
 
 ## PARAMETERS

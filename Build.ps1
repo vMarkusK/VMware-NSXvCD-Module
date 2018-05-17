@@ -263,12 +263,12 @@ Task GenerateMarkdown -requiredVariables DefaultLocale, DocsRootDir, ModuleName,
 
         if (Get-ChildItem -LiteralPath $DocsRootDir -Filter *.md -Recurse) {
             Get-ChildItem -LiteralPath $DocsRootDir -Directory | ForEach-Object {
-                Update-MarkdownHelp -Path $_.FullName -Verbose:$VerbosePreference > $null
+                [Threading.Thread]::CurrentThread.CurrentUICulture = 'en-US'; Update-MarkdownHelp -Path $_.FullName -Verbose:$VerbosePreference > $null
             }
         }
 
         # ErrorAction set to SilentlyContinue so this command will not overwrite an existing MD file.
-        New-MarkdownHelp -Module $ModuleName -Locale $DefaultLocale -OutputFolder $DocsRootDir\$DefaultLocale `
+        [Threading.Thread]::CurrentThread.CurrentUICulture = 'en-US'; New-MarkdownHelp -Module $ModuleName -Locale $DefaultLocale -OutputFolder $DocsRootDir\$DefaultLocale `
                          -WithModulePage:$false -ErrorAction SilentlyContinue -Verbose:$VerbosePreference > $null
     }
     finally {
@@ -291,7 +291,7 @@ Task GenerateHelpFiles -requiredVariables DocsRootDir, ModuleName, PublishDir {
 
     # Generate the module's primary MAML help file.
     foreach ($locale in $helpLocales) {
-        New-ExternalHelp -Path $DocsRootDir\$locale -OutputPath $PublishDir\$locale -Force `
+        [Threading.Thread]::CurrentThread.CurrentUICulture = 'en-US'; New-ExternalHelp -Path $DocsRootDir\$locale -OutputPath $PublishDir\$locale -Force `
                          -ErrorAction SilentlyContinue -Verbose:$VerbosePreference > $null
     }
 }

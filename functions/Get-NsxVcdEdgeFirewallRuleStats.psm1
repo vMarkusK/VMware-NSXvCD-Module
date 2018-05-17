@@ -13,10 +13,10 @@ Function Get-NsxVcdEdgeFirewallRuleStats {
         https://mycloudrevolution.com/
 
     .EXAMPLE
-       Get-NsxVcdEdgeFirewallRuleStats -Id <Edge Id> -RuleId <Rule Id>
+       Get-NsxVcdEdgeFirewallRuleStats -Id EdgeId -RuleId FirewallRuleId
 
     .EXAMPLE
-       Get-NsxVcdEdge | where {$_.name -like "<Edge Name>"} | Get-NsxVcdEdgeFirewallRuleStats -RuleId <Rule Id>
+       Get-NsxVcdEdge | where {$_.name -like EdgeName} | Get-NsxVcdEdgeFirewallRuleStats -RuleId FirewallRuleId
 
     .PARAMETER Id
         Id of the Edge Gateway

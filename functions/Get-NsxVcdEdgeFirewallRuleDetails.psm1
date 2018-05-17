@@ -16,10 +16,10 @@ Function Get-NsxVcdEdgeFirewallRuleDetails {
         https://mycloudrevolution.com/
 
     .EXAMPLE
-       Get-NsxVcdEdgeFirewallRuleDetails -Id <Edge Id> -RuleId <RuleId>
+       Get-NsxVcdEdgeFirewallRuleDetails -Id EdgeId  -RuleId FirewallRuleId
 
     .EXAMPLE
-        Get-NsxVcdEdge | Get-NsxVcdEdgeFirewallRuleDetails -RuleId <RuleId>
+        Get-NsxVcdEdge | Get-NsxVcdEdgeFirewallRuleDetails -RuleId FirewallRuleId
 
     .PARAMETER Id
         Id of the Edge Gateway

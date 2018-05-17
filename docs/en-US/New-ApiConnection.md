@@ -21,9 +21,9 @@ The Session is saved for further use.
 
 ## EXAMPLES
 
-### BEISPIEL 1
+### EXAMPLE 1
 ```
--Credential $Credential
+New-ApiConnection -Server ServerFQDN -Credential $Credential
 ```
 
 ## PARAMETERS

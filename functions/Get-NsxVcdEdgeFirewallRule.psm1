@@ -13,7 +13,7 @@ Function Get-NsxVcdEdgeFirewallRule {
         https://mycloudrevolution.com/
 
     .EXAMPLE
-       Get-NsxVcdEdgeFirewallRule -Id <Edge Id>
+       Get-NsxVcdEdgeFirewallRule -Id EdgeId
 
 
     .EXAMPLE

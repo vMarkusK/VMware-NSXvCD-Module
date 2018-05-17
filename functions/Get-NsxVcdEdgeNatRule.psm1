@@ -13,7 +13,7 @@ Function Get-NsxVcdEdgeNatRule {
         https://mycloudrevolution.com/
 
     .EXAMPLE
-       Get-NsxVcdEdgeNatRule -Id <Edge Id>
+       Get-NsxVcdEdgeNatRule -Id EdgeId
 
     .PARAMETER Id
         Id of the Edge Gateway
