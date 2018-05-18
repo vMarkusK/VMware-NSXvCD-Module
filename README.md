@@ -17,7 +17,7 @@ MY CLOUD-(R)EVOLUTION [mycloudrevolution.com](http://mycloudrevolution.com/)
 
 ![Example](/media/Example.png)
 
-The 'VMware-NSXvCD-Module' leverages the vCloud Directpr API for NSX.
+The 'VMware-NSXvCD-Module' leverages the vCloud Director API for NSX.
 
 # Project Details
 
