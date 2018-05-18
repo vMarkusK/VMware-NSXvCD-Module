@@ -114,7 +114,7 @@ PrivateData = @{
         # IconUri = ''
 
         # 'ReleaseNotes' des Moduls
-        ReleaseNotes = 'https://github.com/mycloudrevolution/VMware-NSXvCD-Module/blob/master/ReleaseNotes.md'
+        #ReleaseNotes = 'https://github.com/mycloudrevolution/VMware-NSXvCD-Module/blob/master/ReleaseNotes.md'
 
     } # Ende der PSData-Hashtabelle
 
