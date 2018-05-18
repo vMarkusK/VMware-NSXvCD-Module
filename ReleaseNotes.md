@@ -4,4 +4,4 @@ May, 2018
 - First official release shipped to the PowerShell Gallery!
 
 ### Feedback
-Please send your feedback to http://github.com/PowerShell/Plaster/issues
+Please send your feedback to https://github.com/mycloudrevolution/VMware-NSXvCD-Module/issues
