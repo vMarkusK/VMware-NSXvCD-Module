@@ -13,6 +13,12 @@ MY CLOUD-(R)EVOLUTION [mycloudrevolution.com](http://mycloudrevolution.com/)
 
 [mycloudrevolution.com](http://mycloudrevolution.com/)
 
+## Project Documentation:
+
+[![Documentation Status](https://readthedocs.org/projects/vmware-nsxvcd-module/badge/?version=latest)](http://vmware-nsxvcd-module.readthedocs.io/en/latest/?badge=latest)
+
+[VMware-NSXvCD-Module - Read The Docs](http://vmware-nsxvcd-module.readthedocs.io/en/latest/)
+
 ## Project Description:
 
 ![Example](/media/Example.png)
