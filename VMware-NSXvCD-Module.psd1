@@ -114,14 +114,14 @@ PrivateData = @{
         # IconUri = ''
 
         # 'ReleaseNotes' des Moduls
-        # ReleaseNotes = ''
+        ReleaseNotes = 'https://github.com/mycloudrevolution/VMware-NSXvCD-Module/blob/master/ReleaseNotes.md'
 
     } # Ende der PSData-Hashtabelle
 
 } # Ende der PrivateData-Hashtabelle
 
 # HelpInfo-URI dieses Moduls
-# HelpInfoURI = ''
+HelpInfoURI = 'http://vmware-nsxvcd-module.readthedocs.io/en/latest/'
 
 # Standardpräfix für Befehle, die aus diesem Modul exportiert werden. Das Standardpräfix kann mit "Import-Module -Prefix" überschrieben werden.
 # DefaultCommandPrefix = ''
