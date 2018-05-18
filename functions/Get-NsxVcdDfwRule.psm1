@@ -24,6 +24,9 @@ Function Get-NsxVcdDfwRule {
     .PARAMETER OrgVdcId
         Id of the OrgVdcId
 
+    .PARAMETER OutputXML
+        Output the result as XML
+
     #>
     Param (
         [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Id of the OrgVdc")]
@@ -37,42 +40,38 @@ Function Get-NsxVcdDfwRule {
             [Switch] $layer3Sections,
         [Parameter(Mandatory=$True, ValueFromPipeline=$False, ParameterSetName='layer2Sections',HelpMessage="Display only layer2Sections")]
         [ValidateNotNullorEmpty()]
-            [Switch] $layer2Sections
+            [Switch] $layer2Sections,
+        [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Display Rules as XML")]
+        [ValidateNotNullorEmpty()]
+            [Switch] $OutputXML
     )
     Process {
 
         [xml]$DfwConfig = Invoke-NsxVcdApiCall -Uri "/network/firewall/globalroot-0/config?vdc=$OrgVdcId" -Method "Get"
 
         if ($layer3Sections) {
-            if ($RuleId) {
-                [Array]$DfwReport = $DfwConfig.firewallConfiguration.layer3Sections.section.rule | Where-Object {$_.Id -eq $RuleId}
-            }
-            else {
-                [Array]$DfwReport = $DfwConfig.firewallConfiguration.layer3Sections.section.rule
-            }
-
+            [Array]$DfwReport = $DfwConfig.firewallConfiguration.layer3Sections.section
         }
         elseif ($layer2Sections) {
-            if ($RuleId) {
-                [Array]$DfwReport = $DfwConfig.firewallConfiguration.layer2Sections.section.rule | Where-Object {$_.Id -eq $RuleId}
-            }
-            else {
-                [Array]$DfwReport = $DfwConfig.firewallConfiguration.layer2Sections.section.rule
-            }
-
+            [Array]$DfwReport = $DfwConfig.firewallConfiguration.layer2Sections.section
         }
         else {
-            if ($RuleId) {
-                [Array]$DfwReport = $DfwConfig.firewallConfiguration.layer3Sections.section.rule  | Where-Object {$_.Id -eq $RuleId}
-                [Array]$DfwReport += $DfwConfig.firewallConfiguration.layer2Sections.section.rule | Where-Object {$_.Id -eq $RuleId}
-            }
-            else {
-                [Array]$DfwReport = $DfwConfig.firewallConfiguration.layer3Sections.section.rule
-                [Array]$DfwReport += $DfwConfig.firewallConfiguration.layer2Sections.section.rule
-            }
-
+            [Array]$DfwReport = $DfwConfig.firewallConfiguration.layer3Sections.section
+            [Array]$DfwReport += $DfwConfig.firewallConfiguration.layer2Sections.section
         }
 
-        $DfwReport
+        if ($OutputXML) {
+            $DfwReport | Format-XML
+        }
+        elseif ($RuleId) {
+            $DfwReport.rule | Where-Object {$_.Id -eq $RuleId}
+        }
+        elseif ($OutputXML -and $RuleId) {
+            $DfwRuleFilter = $DfwReport.rule | Where-Object {$_.Id -eq $RuleId}
+            $DfwRuleFilter | Format-XML
+        }
+        else {
+            $DfwReport.rule
+        }
     }
 }
