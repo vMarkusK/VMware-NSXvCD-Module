@@ -12,7 +12,7 @@
 # RootModule = 'VMware-NSXvCD-Module.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '0.11.0'
+ModuleVersion = '1.0.0'
 
 # ID zur eindeutigen Kennzeichnung dieses Moduls
 GUID = 'f28410b0-eebf-4194-a647-c5e5337f5cd9'
@@ -27,7 +27,7 @@ CompanyName = 'mycloudrevolution.com'
 Copyright = '(c) 2018 Markus Kraus.'
 
 # Beschreibung der von diesem Modul bereitgestellten Funktionen
-# Description = ''
+Description = 'The VMware-NSXvCD-Module leverages the vCloud Director API for NSX to Report Edge Gateway and Distribued Firewall Details'
 
 # Die für dieses Modul mindestens erforderliche Version des Windows PowerShell-Moduls
 # PowerShellVersion = ''

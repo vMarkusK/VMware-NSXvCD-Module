@@ -57,7 +57,7 @@ Describe "General Code validation: $moduleName" {
 Describe "Module Function validation: $moduleName" {
 
     $modules = Get-ChildItem $moduleRoot -Include *.psd1 -Recurse
-    Import-Module $modules
+    Import-Module $modules -Global -Force
     if ($Global:ApiConnection) {
         Remove-Variable ApiConnection
     }
