@@ -19,4 +19,4 @@ The main documentation for the module is organized into a couple sections:
    :glob:
    :caption: Feature Documentation
 
-   *
+   en-US/*
