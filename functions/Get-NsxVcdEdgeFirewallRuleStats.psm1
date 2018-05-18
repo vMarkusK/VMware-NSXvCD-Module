@@ -38,7 +38,7 @@ Function Get-NsxVcdEdgeFirewallRuleStats {
         )
         Process {
 
-            [XML]$Stats = Invoke-ApiCall -Uri "/network/edges/$Id/firewall/statistics/$RuleId" -Method "Get"
+            [XML]$Stats = Invoke-NsxVcdApiCall -Uri "/network/edges/$Id/firewall/statistics/$RuleId" -Method "Get"
             $Stats.firewallRuleStats
 
         }

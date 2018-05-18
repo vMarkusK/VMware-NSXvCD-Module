@@ -32,7 +32,7 @@ Function Get-NsxVcdEdgeNatRule {
         )
         Process {
 
-            [XML]$Rules = Invoke-ApiCall -Uri "/network/edges/$Id/nat/config" -Method "Get"
+            [XML]$Rules = Invoke-NsxVcdApiCall -Uri "/network/edges/$Id/nat/config" -Method "Get"
             $Rules.nat.natRules.natRule
 
         }

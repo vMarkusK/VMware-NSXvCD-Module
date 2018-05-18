@@ -1,18 +1,18 @@
 ---
-external help file: Invoke-ApiCall-help.xml
+external help file: Invoke-NsxVcdApiCall-help.xml
 Module Name: VMware-NSXvCD-Module
 online version: https://mycloudrevolution.com/
 schema: 2.0.0
 ---
 
-# Invoke-ApiCall
+# Invoke-NsxVcdApiCall
 
 ## SYNOPSIS
 
 ## SYNTAX
 
 ```
-Invoke-ApiCall [[-Server] <String>] [[-Authorization] <String>] [-Uri] <String> [[-Accept] <String>]
+Invoke-NsxVcdApiCall [[-Server] <String>] [[-Authorization] <String>] [-Uri] <String> [[-Accept] <String>]
  [-Method] <String> [<CommonParameters>]
 ```
 
@@ -23,7 +23,7 @@ Helper Function to call the vCloud Director API.
 
 ### EXAMPLE 1
 ```
-Invoke-ApiCall -Uri "/network/edges/$Id/nat/config" -Method "Get"
+Invoke-NsxVcdApiCall -Uri "/network/edges/$Id/nat/config" -Method "Get"
 ```
 
 ## PARAMETERS
@@ -104,14 +104,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ## NOTES
-File Name  : Invoke-ApiCall.ps1
+File Name  : Invoke-NsxVcdApiCall.ps1
 Author     : Markus Kraus
 Version    : 1.1
 State      : Ready

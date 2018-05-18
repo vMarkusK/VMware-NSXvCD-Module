@@ -27,11 +27,11 @@ The 'VMware-NSXvCD-Module' leverages the [vCloud Director API for NSX](https://c
 
 # Project Details
 
-## New-ApiConnection
+## New-NsxVcdApiConnection
 
-![New-ApiConnection](/media/New-ApiConnection.png)
+![New-NsxVcdApiConnection](/media/New-NsxVcdApiConnection.png)
 
-[New-ApiConnection - Details](/docs/en-US/New-ApiConnection.md)
+[New-NsxVcdApiConnection - Details](/docs/en-US/New-NsxVcdApiConnection.md)
 
 ## Get-NsxVcdEdgeNatRule
 

@@ -12,7 +12,7 @@
 # RootModule = 'VMware-NSXvCD-Module.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '1.0.0'
+ModuleVersion = '1.1.0'
 
 # ID zur eindeutigen Kennzeichnung dieses Moduls
 GUID = 'f28410b0-eebf-4194-a647-c5e5337f5cd9'
@@ -63,8 +63,8 @@ Description = 'The VMware-NSXvCD-Module leverages the vCloud Director API for NS
 # FormatsToProcess = @()
 
 # Die Module, die als geschachtelte Module des in "RootModule/ModuleToProcess" angegebenen Moduls importiert werden sollen.
-NestedModules = @('functions\New-ApiConnection.psm1',
-                'functions\Invoke-ApiCall.psm1',
+NestedModules = @('functions\New-NsxVcdApiConnection.psm1',
+                'functions\Invoke-NsxVcdApiCall.psm1',
                 'functions\Get-NsxVcdEdge.psm1',
                 'functions\Get-NsxVcdEdgeDetails.psm1',
                 'functions\Get-NsxVcdEdgeFirewallRule.psm1',
@@ -76,7 +76,7 @@ NestedModules = @('functions\New-ApiConnection.psm1',
                 )
 
 # Aus diesem Modul zu exportierende Funktionen
-FunctionsToExport = 'New-ApiConnection', 'Invoke-ApiCall', 'Get-NsxVcdEdge', 'Get-NsxVcdEdgeDetails', 'Get-NsxVcdEdgeFirewallRule', 'Get-NsxVcdEdgeFirewallRuleDetails', 'Get-NsxVcdEdgeFirewallRuleStats', 'Get-NsxVcdEdgeNatRule', 'Enable-NsxVcdDfw', 'Get-NsxVcdDfwRule'
+FunctionsToExport = 'New-NsxVcdApiConnection', 'Invoke-NsxVcdApiCall', 'Get-NsxVcdEdge', 'Get-NsxVcdEdgeDetails', 'Get-NsxVcdEdgeFirewallRule', 'Get-NsxVcdEdgeFirewallRuleDetails', 'Get-NsxVcdEdgeFirewallRuleStats', 'Get-NsxVcdEdgeNatRule', 'Enable-NsxVcdDfw', 'Get-NsxVcdDfwRule'
 
 # Aus diesem Modul zu exportierende Cmdlets
 #CmdletsToExport = '*'

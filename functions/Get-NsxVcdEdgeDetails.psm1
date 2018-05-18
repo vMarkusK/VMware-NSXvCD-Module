@@ -32,7 +32,7 @@ Function Get-NsxVcdEdgeDetails {
         )
         Process {
 
-            [XML]$EdgeDetails = Invoke-ApiCall -Uri "/network/edges/$Id" -Method "Get"
+            [XML]$EdgeDetails = Invoke-NsxVcdApiCall -Uri "/network/edges/$Id" -Method "Get"
 
             $EdgeDetails.edge
         }

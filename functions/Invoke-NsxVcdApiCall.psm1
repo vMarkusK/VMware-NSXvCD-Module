@@ -1,10 +1,10 @@
-Function Invoke-ApiCall {
+Function Invoke-NsxVcdApiCall {
     <#
     .DESCRIPTION
         Helper Function to call the vCloud Director API.
 
     .NOTES
-        File Name  : Invoke-ApiCall.ps1
+        File Name  : Invoke-NsxVcdApiCall.ps1
         Author     : Markus Kraus
         Version    : 1.1
         State      : Ready
@@ -13,7 +13,7 @@ Function Invoke-ApiCall {
         https://mycloudrevolution.com/
 
     .EXAMPLE
-        Invoke-ApiCall -Uri "/network/edges/$Id/nat/config" -Method "Get"
+        Invoke-NsxVcdApiCall -Uri "/network/edges/$Id/nat/config" -Method "Get"
 
     .PARAMETER Server
         FQDN of the vCloud Director Instance

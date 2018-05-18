@@ -41,7 +41,7 @@ Function Get-NsxVcdDfwRule {
     )
     Process {
 
-        [xml]$DfwConfig = Invoke-ApiCall -Uri "/network/firewall/globalroot-0/config?vdc=$OrgVdcId" -Method "Get"
+        [xml]$DfwConfig = Invoke-NsxVcdApiCall -Uri "/network/firewall/globalroot-0/config?vdc=$OrgVdcId" -Method "Get"
 
         if ($layer3Sections) {
             if ($RuleId) {
