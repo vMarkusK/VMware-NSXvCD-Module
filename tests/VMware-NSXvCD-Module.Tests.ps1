@@ -63,7 +63,7 @@ Describe "Module Function validation: $moduleName" {
     }
 
     It "Connect API" {
-        New-ApiConnection -Server $FQDN -Credential $Credentials
+        New-NsxVcdApiConnection -Server $FQDN -Credential $Credentials
         ($Global:ApiConnection).GetType().Name | Should -Be "PSCustomObject"
     }
 

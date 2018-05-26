@@ -1,18 +1,18 @@
 ---
-external help file: New-ApiConnection-help.xml
+external help file: New-NsxVcdApiConnection-help.xml
 Module Name: VMware-NSXvCD-Module
 online version: https://mycloudrevolution.com/
 schema: 2.0.0
 ---
 
-# New-ApiConnection
+# New-NsxVcdApiConnection
 
 ## SYNOPSIS
 
 ## SYNTAX
 
 ```
-New-ApiConnection [-Server] <String> [-Credential] <PSCredential> [<CommonParameters>]
+New-NsxVcdApiConnection [-Server] <String> [-Credential] <PSCredential> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -23,7 +23,7 @@ The Session is saved for further use.
 
 ### EXAMPLE 1
 ```
-New-ApiConnection -Server ServerFQDN -Credential $Credential
+New-NsxVcdApiConnection -Server ServerFQDN -Credential $Credential
 ```
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-File Name  : New-ApiConnection.ps1
+File Name  : New-NsxVcdApiConnection.ps1
 Author     : Markus Kraus
 Version    : 1.2
 State      : Ready

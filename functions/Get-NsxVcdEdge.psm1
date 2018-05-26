@@ -41,7 +41,7 @@ Function Get-NsxVcdEdge {
         )
         Process {
 
-            [XML]$Edges = Invoke-ApiCall -Uri "/network/edges" -Method "Get"
+            [XML]$Edges = Invoke-NsxVcdApiCall -Uri "/network/edges" -Method "Get"
 
             if ($Name) {
                 $Edges.pagedEdgeList.edgePage.edgeSummary | Where-Object {$_.name -like "$Name"}

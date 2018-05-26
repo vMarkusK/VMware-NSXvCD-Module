@@ -13,12 +13,12 @@ schema: 2.0.0
 
 ### layer3Sections
 ```
-Get-NsxVcdDfwRule -OrgVdcId <String> [-RuleId <String>] [-layer3Sections] [<CommonParameters>]
+Get-NsxVcdDfwRule -OrgVdcId <String> [-RuleId <String>] [-layer3Sections] [-OutputXML] [<CommonParameters>]
 ```
 
 ### layer2Sections
 ```
-Get-NsxVcdDfwRule -OrgVdcId <String> [-RuleId <String>] [-layer2Sections] [<CommonParameters>]
+Get-NsxVcdDfwRule -OrgVdcId <String> [-RuleId <String>] [-layer2Sections] [-OutputXML] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -97,6 +97,21 @@ Parameter Sets: layer2Sections
 Aliases:
 
 Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OutputXML
+Output the result as XML
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False

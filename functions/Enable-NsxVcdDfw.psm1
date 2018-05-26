@@ -27,7 +27,7 @@ Function Enable-NsxVcdDfw {
     Process {
 
         try {
-            $Dfw = Invoke-ApiCall -Uri "/network/firewall/vdc/$Id" -Method "Post"
+            $Dfw = Invoke-NsxVcdApiCall -Uri "/network/firewall/vdc/$Id" -Method "Post"
 
             Write-Host "Success" -ForegroundColor Green
 

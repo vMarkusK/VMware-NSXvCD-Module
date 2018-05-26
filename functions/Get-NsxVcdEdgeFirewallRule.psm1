@@ -46,7 +46,7 @@ Function Get-NsxVcdEdgeFirewallRule {
         Process {
 
             if ($RuleId) {
-                [XML]$Rules = Invoke-ApiCall -Uri "/network/edges/$Id/firewall/config/rules/$RuleId" -Method "Get"
+                [XML]$Rules = Invoke-NsxVcdApiCall -Uri "/network/edges/$Id/firewall/config/rules/$RuleId" -Method "Get"
                 if ($OutputXML) {
                     $Rules | Format-XML
                 }
@@ -56,7 +56,7 @@ Function Get-NsxVcdEdgeFirewallRule {
 
             }
             else {
-                [XML]$Rules = Invoke-ApiCall -Uri "/network/edges/$Id/firewall/config" -Method "Get"
+                [XML]$Rules = Invoke-NsxVcdApiCall -Uri "/network/edges/$Id/firewall/config" -Method "Get"
                 if ($OutputXML) {
                     $Rules.firewall.firewallRules | Format-XML
                 }

@@ -1,10 +1,10 @@
-Function New-ApiConnection {
+Function New-NsxVcdApiConnection {
     <#
     .DESCRIPTION
         Connects to the API of your vCloud Director instance. The Session is saved for further use.
 
     .NOTES
-        File Name  : New-ApiConnection.ps1
+        File Name  : New-NsxVcdApiConnection.ps1
         Author     : Markus Kraus
         Version    : 1.2
         State      : Ready
@@ -13,7 +13,7 @@ Function New-ApiConnection {
         https://mycloudrevolution.com/
 
     .EXAMPLE
-        New-ApiConnection -Server ServerFQDN -Credential $Credential
+        New-NsxVcdApiConnection -Server ServerFQDN -Credential $Credential
 
     .PARAMETER Server
         FQDN of the vCloud Director Instance
