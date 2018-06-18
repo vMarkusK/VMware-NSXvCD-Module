@@ -1,9 +1,9 @@
-Welcome to my PowerShell Module for Veeam Availability Orchestrator
+Welcome to my VMware-NSXvCD-Module
 ========================
 
-This the basic documentation of the 'PowerVAO' PowerShell Module.
+This the basic documentation of the 'VMware-NSXvCD-Module' PowerShell Module.
 
-GitHub: https://github.com/mycloudrevolution/PowerVAO/
+GitHub: https://github.com/mycloudrevolution/VMware-NSXvCD-Module
 
 WebSite: https://mycloudrevolution.com/
 
