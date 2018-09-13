@@ -64,6 +64,7 @@ Description = 'The VMware-NSXvCD-Module leverages the vCloud Director API for NS
 
 # Die Module, die als geschachtelte Module des in "RootModule/ModuleToProcess" angegebenen Moduls importiert werden sollen.
 NestedModules = @('functions\New-NsxVcdApiConnection.psm1',
+                'functions\Format-XML.psm1',
                 'functions\Invoke-NsxVcdApiCall.psm1',
                 'functions\Get-NsxVcdEdge.psm1',
                 'functions\Get-NsxVcdEdgeDetails.psm1',
