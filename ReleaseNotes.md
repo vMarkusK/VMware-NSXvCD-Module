@@ -1,3 +1,13 @@
+## What is New in VMware-NSXvCD-Module 1.2.0
+Sep, 2018
+
+### New Functions
+- Get-NsxVcdDfwSecurityGroups
+- Get-NsxVcdDfwSecurityTags
+- Get-NsxVcdDfwSecurityTagVMs
+- Add-NsxVcdDfwSecurityTagVM
+- Remove-NsxVcdDfwSecurityTagVM
+
 ## What is New in VMware-NSXvCD-Module 1.1.0
 May, 2018
 
