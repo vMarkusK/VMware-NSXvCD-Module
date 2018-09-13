@@ -47,14 +47,24 @@ Function Invoke-NsxVcdApiCall {
             [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Method of the API Call")]
             [ValidateNotNullorEmpty()]
             [ValidateSet("Get","Post")]
-                [String]$Method
+                [String]$Method,
+            [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Body of the API Call")]
+            [ValidateNotNullorEmpty()]
+                [XML]$Body
         )
         Process {
 
             #region: RESTful API Call
-            $FullUri = "https://" + $Server + $Uri
-            $Headers =  @{'accept' = $Accept +';version=' + $Global:ApiConnection.ApiVersion;'Content-type' = 'application/xml';'Accept-Language' = 'en';'x-vcloud-authorization' = $Authorization}
-            [XML]$Return = Invoke-RestMethod -uri $FullUri -Method $Method -Headers $Headers
+            if ($Body -and $Method -eq "Post") {
+                $FullUri = "https://" + $Server + $Uri
+                $Headers =  @{'accept' = $Accept +';version=' + $Global:ApiConnection.ApiVersion;'Content-type' = 'application/xml';'Accept-Language' = 'en';'x-vcloud-authorization' = $Authorization}
+                [XML]$Return = Invoke-RestMethod -uri $FullUri -Method $Method -Headers $Headers -Body $Body
+            }
+            else {
+                $FullUri = "https://" + $Server + $Uri
+                $Headers =  @{'accept' = $Accept +';version=' + $Global:ApiConnection.ApiVersion;'Content-type' = 'application/xml';'Accept-Language' = 'en';'x-vcloud-authorization' = $Authorization}
+                [XML]$Return = Invoke-RestMethod -uri $FullUri -Method $Method -Headers $Headers
+            }
             #edregion
 
             $Return

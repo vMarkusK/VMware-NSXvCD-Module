@@ -75,13 +75,15 @@ NestedModules = @('functions\New-NsxVcdApiConnection.psm1',
                 'functions\Enable-NsxVcdDfw.psm1',
                 'functions\Get-NsxVcdDfwRule.psm1',
                 'functions\Get-NsxVcdDfwSecurityGroups.psm1',
-                'functions\Get-NsxVcdDfwSecurityTags.psm1'
+                'functions\Get-NsxVcdDfwSecurityTags.psm1',
+                'functions\Get-NsxVcdDfwSecurityTagVMs.psm1'
                 )
 
 # Aus diesem Modul zu exportierende Funktionen
 FunctionsToExport = 'New-NsxVcdApiConnection', 'Invoke-NsxVcdApiCall', 'Get-NsxVcdEdge', 'Get-NsxVcdEdgeDetails',
                     'Get-NsxVcdEdgeFirewallRule', 'Get-NsxVcdEdgeFirewallRuleDetails', 'Get-NsxVcdEdgeFirewallRuleStats',
-                    'Get-NsxVcdEdgeNatRule', 'Enable-NsxVcdDfw', 'Get-NsxVcdDfwRule', 'Get-NsxVcdDfwSecurityGroups', 'Get-NsxVcdDfwSecurityTags'
+                    'Get-NsxVcdEdgeNatRule', 'Enable-NsxVcdDfw', 'Get-NsxVcdDfwRule', 'Get-NsxVcdDfwSecurityGroups',
+                    'Get-NsxVcdDfwSecurityTags', 'Get-NsxVcdDfwSecurityTagVMs'
 
 # Aus diesem Modul zu exportierende Cmdlets
 #CmdletsToExport = '*'

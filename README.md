@@ -83,6 +83,12 @@ The 'VMware-NSXvCD-Module' leverages the [vCloud Director API for NSX](https://c
 
 [Get-NsxVcdDfwSecurityTags - Details](/docs/en-US/Get-NsxVcdDfwSecurityTags.md)
 
+## Get-NsxVcdDfwSecurityTagVMs
+
+![Get-NsxVcdDfwSecurityTagVMs](/media/Get-NsxVcdDfwSecurityTagVMs.png)
+
+[Get-NsxVcdDfwSecurityTagVMs - Details](/docs/en-US/Get-NsxVcdDfwSecurityTagVMs.md)
+
 # Tests
 
 ## Pester Example
