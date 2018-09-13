@@ -16,13 +16,23 @@ Get-NsxVcdDfwSecurityGroups [-OrgVdcId] <String> [-OutputXML] [<CommonParameters
 ```
 
 ## DESCRIPTION
-Returnes the DFW Security Groups of the OrgVdc DFW.
+Returnes the Security Groups of the OrgVdc DFW.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
 Get-NsxVcdDfwSecurityGroups -OrgId OrgVdcId
+```
+
+### EXAMPLE 2
+```
+Get-NsxVcdDfwSecurityGroups -OrgId OrgVdcId -OutputXML
+```
+
+### EXAMPLE 3
+```
+Get-NsxVcdDfwSecurityGroups -OrgVdcId OrgVdcId | select objectId, name, @{N='type'; E= {$_.type.typeName}}
 ```
 
 ## PARAMETERS

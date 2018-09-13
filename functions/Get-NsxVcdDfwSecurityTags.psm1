@@ -18,6 +18,9 @@ Function Get-NsxVcdDfwSecurityTags {
     .EXAMPLE
        Get-NsxVcdDfwSecurityTags -OrgId OrgVdcId -OutputXML
 
+    .EXAMPLE
+        Get-NsxVcdDfwSecurityTags -OrgVdcId OrgVdcId | select objectId, name, description, vmCount
+
     .PARAMETER OrgVdcId
         Id of the OrgVdcId
 
