@@ -4,7 +4,7 @@ Function Get-NsxVcdDfwSecurityTagVMs {
         Returnes the Security Tag VMs of the OrgVdc DFW.
 
     .NOTES
-        File Name  : Get-NsxVcdDfwSecurityTagVMss.ps1
+        File Name  : Get-NsxVcdDfwSecurityTagVMs.ps1
         Author     : Markus Kraus
         Version    : 1.0
         State      : Ready
@@ -38,7 +38,7 @@ Function Get-NsxVcdDfwSecurityTagVMs {
     )
     Process {
 
-        [xml]$DfwSecurityTagVMs = Invoke-NsxVcdApiCall -Uri "/network/services/securitytags/tag/d0f19690-b44a-4c38-b57e-274ac8d84a5b:securitytag-13/vm" -Method "Get"
+        [xml]$DfwSecurityTagVMs = Invoke-NsxVcdApiCall -Uri "/network/services/securitytags/tag/$SecurityTagId/vm" -Method "Get"
 
 
         if ($OutputXML) {

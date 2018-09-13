@@ -46,7 +46,7 @@ Function Invoke-NsxVcdApiCall {
                 [String]$Accept = "application/*+xml",
             [Parameter(Mandatory=$True, ValueFromPipeline=$False, HelpMessage="Method of the API Call")]
             [ValidateNotNullorEmpty()]
-            [ValidateSet("Get","Post")]
+            [ValidateSet("Get","Post","Put")]
                 [String]$Method,
             [Parameter(Mandatory=$False, ValueFromPipeline=$False, HelpMessage="Body of the API Call")]
             [ValidateNotNullorEmpty()]
