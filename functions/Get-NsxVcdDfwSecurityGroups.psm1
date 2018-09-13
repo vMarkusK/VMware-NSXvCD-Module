@@ -15,6 +15,12 @@ Function Get-NsxVcdDfwSecurityGroups {
     .EXAMPLE
        Get-NsxVcdDfwSecurityGroups -OrgId OrgVdcId
 
+    .EXAMPLE
+       Get-NsxVcdDfwSecurityGroups -OrgId OrgVdcId -OutputXML
+
+    .EXAMPLE
+       Get-NsxVcdDfwSecurityGroups -OrgVdcId OrgVdcId | select objectId, name, @{N='type'; E= {$_.type.typeName}}
+
     .PARAMETER OrgVdcId
         Id of the OrgVdcId
 
