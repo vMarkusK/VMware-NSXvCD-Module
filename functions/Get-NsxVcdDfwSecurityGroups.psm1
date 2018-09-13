@@ -1,7 +1,7 @@
 Function Get-NsxVcdDfwSecurityGroups {
     <#
     .DESCRIPTION
-        Returnes the DFW Security Groups of the OrgVdc DFW.
+        Returnes the Security Groups of the OrgVdc DFW.
 
     .NOTES
         File Name  : Get-NsxVcdDfwSecurityGroups.ps1
