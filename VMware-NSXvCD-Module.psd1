@@ -82,7 +82,7 @@ NestedModules = @('functions\New-NsxVcdApiConnection.psm1',
                 )
 
 # Aus diesem Modul zu exportierende Funktionen
-FunctionsToExport = 'New-NsxVcdApiConnection', 'Invoke-NsxVcdApiCall', 'Get-NsxVcdEdge', 'Get-NsxVcdEdgeDetails',
+FunctionsToExport = 'New-NsxVcdApiConnection', 'Format-XML', 'Invoke-NsxVcdApiCall', 'Get-NsxVcdEdge', 'Get-NsxVcdEdgeDetails',
                     'Get-NsxVcdEdgeFirewallRule', 'Get-NsxVcdEdgeFirewallRuleDetails', 'Get-NsxVcdEdgeFirewallRuleStats',
                     'Get-NsxVcdEdgeNatRule', 'Enable-NsxVcdDfw', 'Get-NsxVcdDfwRule', 'Get-NsxVcdDfwSecurityGroups',
                     'Get-NsxVcdDfwSecurityTags', 'Get-NsxVcdDfwSecurityTagVMs', 'Add-NsxVcdDfwSecurityTagVM', 'Remove-NsxVcdDfwSecurityTagVM'
