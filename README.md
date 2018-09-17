@@ -71,6 +71,37 @@ The 'VMware-NSXvCD-Module' leverages the [vCloud Director API for NSX](https://c
 
 [Get-NsxVcdDfwRule - Details](/docs/en-US/Get-NsxVcdDfwRule.md)
 
+## Get-NsxVcdDfwSecurityGroups
+
+![Get-NsxVcdDfwSecurityGroups](/media/Get-NsxVcdDfwSecurityGroups.png)
+
+[Get-NsxVcdDfwSecurityGroups - Details](/docs/en-US/Get-NsxVcdDfwSecurityGroups.md)
+
+## Get-NsxVcdDfwSecurityTags
+
+![Get-NsxVcdDfwSecurityTags](/media/Get-NsxVcdDfwSecurityTags.png)
+
+[Get-NsxVcdDfwSecurityTags - Details](/docs/en-US/Get-NsxVcdDfwSecurityTags.md)
+
+## Get-NsxVcdDfwSecurityTagVMs
+
+![Get-NsxVcdDfwSecurityTagVMs](/media/Get-NsxVcdDfwSecurityTagVMs.png)
+
+[Get-NsxVcdDfwSecurityTagVMs - Details](/docs/en-US/Get-NsxVcdDfwSecurityTagVMs.md)
+
+## Add-NsxVcdDfwSecurityTagVM
+
+![Add-NsxVcdDfwSecurityTagVM](/media/Add-NsxVcdDfwSecurityTagVM.png)
+
+[Add-NsxVcdDfwSecurityTagVM - Details](/docs/en-US/Add-NsxVcdDfwSecurityTagVM.md)
+
+## Remove-NsxVcdDfwSecurityTagVM
+
+![Remove-NsxVcdDfwSecurityTagVM](/media/Remove-NsxVcdDfwSecurityTagVM.png)
+
+[Remove-NsxVcdDfwSecurityTagVM - Details](/docs/en-US/Remove-NsxVcdDfwSecurityTagVM.md)
+
+
 # Tests
 
 ## Pester Example

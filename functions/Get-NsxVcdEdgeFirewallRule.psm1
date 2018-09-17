@@ -1,7 +1,7 @@
 Function Get-NsxVcdEdgeFirewallRule {
     <#
     .DESCRIPTION
-        Returnes the of the Firewall Rules of the Edge Gatway.
+        Returnes the list of the Firewall Rules of the Edge Gatway.
 
     .NOTES
         File Name  : Get-NsxVcdEdgeFirewallRule.ps1

@@ -1,73 +1,68 @@
 ---
-external help file: Get-NsxVcdEdge-help.xml
+external help file: Get-NsxVcdDfwSecurityTagVMs-help.xml
 Module Name: VMware-NSXvCD-Module
 online version: https://mycloudrevolution.com/
 schema: 2.0.0
 ---
 
-# Get-NsxVcdEdge
+# Get-NsxVcdDfwSecurityTagVMs
 
 ## SYNOPSIS
 
 ## SYNTAX
 
 ```
-Get-NsxVcdEdge [[-Name] <String>] [[-OrgVdcName] <String>] [<CommonParameters>]
+Get-NsxVcdDfwSecurityTagVMs [-SecurityTagId] <Object> [-OutputXML] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returnes the Edge Gatways.
+Returnes the Security Tag VMs of the OrgVdc DFW.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Get-NsxVcdEdge
+Get-NsxVcdDfwSecurityTagVMs -SecurityTagId SecurityTagId
 ```
 
 ### EXAMPLE 2
 ```
-Get-NsxVcdEdge -Name YourEdgeName
+Get-NsxVcdDfwSecurityTagVMs -SecurityTagId SecurityTagId -OutputXML
 ```
 
 ### EXAMPLE 3
 ```
-Get-NsxVcdEdge -OrgVdcName YourOrgName
-```
-
-### EXAMPLE 4
-```
-Get-NsxVcdEdge | select Name, datacenterName, Id | ft -AutoSize
+Get-NsxVcdDfwSecurityTags -OrgVdcId OrgVdcId | Get-NsxVcdDfwSecurityTagVMs | select objectId, objectTypeName, name
 ```
 
 ## PARAMETERS
 
-### -Name
-Name of the Edge Gateway
+### -SecurityTagId
+Id (objectId) of the Security Tag
 
 ```yaml
-Type: String
+Type: Object
 Parameter Sets: (All)
-Aliases:
+Aliases: objectId
 
-Required: False
+Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OrgVdcName
-OrgVdc Name of the Edge Gateway
+### -OutputXML
+Output the result as XML
 
 ```yaml
-Type: String
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
-Default value: None
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -80,9 +75,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-File Name  : Get-NsxVcdEdge.ps1
+File Name  : Get-NsxVcdDfwSecurityTagVMs.ps1
 Author     : Markus Kraus
-Version    : 1.3
+Version    : 1.0
 State      : Ready
 
 ## RELATED LINKS

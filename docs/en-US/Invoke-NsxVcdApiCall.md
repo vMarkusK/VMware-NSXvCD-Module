@@ -13,7 +13,7 @@ schema: 2.0.0
 
 ```
 Invoke-NsxVcdApiCall [[-Server] <String>] [[-Authorization] <String>] [-Uri] <String> [[-Accept] <String>]
- [-Method] <String> [<CommonParameters>]
+ [-Method] <String> [[-Body] <XmlDocument>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -98,6 +98,21 @@ Aliases:
 
 Required: True
 Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Body
+Body of the API Call
+
+```yaml
+Type: XmlDocument
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

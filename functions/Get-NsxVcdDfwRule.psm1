@@ -1,7 +1,7 @@
 Function Get-NsxVcdDfwRule {
     <#
     .DESCRIPTION
-        Returnes the of the Firewall Rules the OrgVdc DFW.
+        Returnes the list of the Firewall Rules the OrgVdc DFW.
 
     .NOTES
         File Name  : Get-NsxVcdDfwRule.ps1

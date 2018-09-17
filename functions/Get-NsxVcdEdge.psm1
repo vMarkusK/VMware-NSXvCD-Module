@@ -1,7 +1,7 @@
 Function Get-NsxVcdEdge {
     <#
     .DESCRIPTION
-        Returnes Edge Gatways.
+        Returnes the Edge Gatways.
 
     .NOTES
         File Name  : Get-NsxVcdEdge.ps1

@@ -1,64 +1,49 @@
 ---
-external help file: Get-NsxVcdEdge-help.xml
+external help file: Add-NsxVcdDfwSecurityTagVM-help.xml
 Module Name: VMware-NSXvCD-Module
 online version: https://mycloudrevolution.com/
 schema: 2.0.0
 ---
 
-# Get-NsxVcdEdge
+# Add-NsxVcdDfwSecurityTagVM
 
 ## SYNOPSIS
 
 ## SYNTAX
 
 ```
-Get-NsxVcdEdge [[-Name] <String>] [[-OrgVdcName] <String>] [<CommonParameters>]
+Add-NsxVcdDfwSecurityTagVM [-SecurityTagId] <String> [[-VmId] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returnes the Edge Gatways.
+Add a VM to a Security Tag of the OrgVdc DFW.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Get-NsxVcdEdge
-```
-
-### EXAMPLE 2
-```
-Get-NsxVcdEdge -Name YourEdgeName
-```
-
-### EXAMPLE 3
-```
-Get-NsxVcdEdge -OrgVdcName YourOrgName
-```
-
-### EXAMPLE 4
-```
-Get-NsxVcdEdge | select Name, datacenterName, Id | ft -AutoSize
+Add-NsxVcdDfwSecurityTagVMs -SecurityTagId SecurityTagId -VmId
 ```
 
 ## PARAMETERS
 
-### -Name
-Name of the Edge Gateway
+### -SecurityTagId
+Id (objectId) of the Security Tag
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: objectId
 
-Required: False
+Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OrgVdcName
-OrgVdc Name of the Edge Gateway
+### -VmId
+Id (UUID) of the VM
 
 ```yaml
 Type: String
@@ -80,9 +65,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-File Name  : Get-NsxVcdEdge.ps1
+File Name  : Add-NsxVcdDfwSecurityTagVM.ps1
 Author     : Markus Kraus
-Version    : 1.3
+Version    : 1.0
 State      : Ready
 
 ## RELATED LINKS

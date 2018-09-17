@@ -16,7 +16,7 @@ Get-NsxVcdEdgeFirewallRule [-Id] <String> [[-RuleId] <Int64>] [-OutputXML] [<Com
 ```
 
 ## DESCRIPTION
-Returnes the of the Firewall Rules of the Edge Gatway.
+Returnes the list of the Firewall Rules of the Edge Gatway.
 
 ## EXAMPLES
 

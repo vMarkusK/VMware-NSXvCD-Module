@@ -12,7 +12,7 @@
 # RootModule = 'VMware-NSXvCD-Module.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '1.1.0'
+ModuleVersion = '1.2.0'
 
 # ID zur eindeutigen Kennzeichnung dieses Moduls
 GUID = 'f28410b0-eebf-4194-a647-c5e5337f5cd9'
@@ -64,6 +64,7 @@ Description = 'The VMware-NSXvCD-Module leverages the vCloud Director API for NS
 
 # Die Module, die als geschachtelte Module des in "RootModule/ModuleToProcess" angegebenen Moduls importiert werden sollen.
 NestedModules = @('functions\New-NsxVcdApiConnection.psm1',
+                'functions\Format-XML.psm1',
                 'functions\Invoke-NsxVcdApiCall.psm1',
                 'functions\Get-NsxVcdEdge.psm1',
                 'functions\Get-NsxVcdEdgeDetails.psm1',
@@ -72,11 +73,19 @@ NestedModules = @('functions\New-NsxVcdApiConnection.psm1',
                 'functions\Get-NsxVcdEdgeFirewallRuleStats.psm1',
                 'functions\Get-NsxVcdEdgeNatRule.psm1',
                 'functions\Enable-NsxVcdDfw.psm1',
-                'functions\Get-NsxVcdDfwRule.psm1'
+                'functions\Get-NsxVcdDfwRule.psm1',
+                'functions\Get-NsxVcdDfwSecurityGroups.psm1',
+                'functions\Get-NsxVcdDfwSecurityTags.psm1',
+                'functions\Get-NsxVcdDfwSecurityTagVMs.psm1',
+                'functions\Add-NsxVcdDfwSecurityTagVM.psm1',
+                'functions\Remove-NsxVcdDfwSecurityTagVM.psm1'
                 )
 
 # Aus diesem Modul zu exportierende Funktionen
-FunctionsToExport = 'New-NsxVcdApiConnection', 'Invoke-NsxVcdApiCall', 'Get-NsxVcdEdge', 'Get-NsxVcdEdgeDetails', 'Get-NsxVcdEdgeFirewallRule', 'Get-NsxVcdEdgeFirewallRuleDetails', 'Get-NsxVcdEdgeFirewallRuleStats', 'Get-NsxVcdEdgeNatRule', 'Enable-NsxVcdDfw', 'Get-NsxVcdDfwRule'
+FunctionsToExport = 'New-NsxVcdApiConnection', 'Format-XML', 'Invoke-NsxVcdApiCall', 'Get-NsxVcdEdge', 'Get-NsxVcdEdgeDetails',
+                    'Get-NsxVcdEdgeFirewallRule', 'Get-NsxVcdEdgeFirewallRuleDetails', 'Get-NsxVcdEdgeFirewallRuleStats',
+                    'Get-NsxVcdEdgeNatRule', 'Enable-NsxVcdDfw', 'Get-NsxVcdDfwRule', 'Get-NsxVcdDfwSecurityGroups',
+                    'Get-NsxVcdDfwSecurityTags', 'Get-NsxVcdDfwSecurityTagVMs', 'Add-NsxVcdDfwSecurityTagVM', 'Remove-NsxVcdDfwSecurityTagVM'
 
 # Aus diesem Modul zu exportierende Cmdlets
 #CmdletsToExport = '*'
