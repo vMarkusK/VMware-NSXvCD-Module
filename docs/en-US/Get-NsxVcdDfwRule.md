@@ -22,7 +22,7 @@ Get-NsxVcdDfwRule -OrgVdcId <String> [-RuleId <String>] [-layer2Sections] [-Outp
 ```
 
 ## DESCRIPTION
-Returnes the of the Firewall Rules the OrgVdc DFW.
+Returnes the list of the Firewall Rules the OrgVdc DFW.
 
 ## EXAMPLES
 
@@ -119,7 +119,8 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -16,7 +16,7 @@ Get-NsxVcdEdgeFirewallRule [-Id] <String> [[-RuleId] <Int64>] [-OutputXML] [<Com
 ```
 
 ## DESCRIPTION
-Returnes the of the Firewall Rules of the Edge Gatway.
+Returnes the list of the Firewall Rules of the Edge Gatway.
 
 ## EXAMPLES
 
@@ -81,7 +81,8 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
